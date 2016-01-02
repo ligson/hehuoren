@@ -1,91 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="
-        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
-        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
          http://www.springframework.org/schema/tx
  		  http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
-          http://www.springframework.org/schema/cache 
-        ">
+          http://www.springframework.org/schema/cache">
 
 
-	<aop:aspectj-autoproxy proxy-target-class="true" />
-	<context:annotation-config />
-	<context:component-scan base-package="*">
-		<context:exclude-filter type="annotation"
-			expression="org.springframework.stereotype.Controller" />
-	</context:component-scan>
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <context:annotation-config/>
+    <context:component-scan base-package="*">
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
 
-	<mvc:annotation-driven />
-
-	
-
-	<bean id="cacheManager"
-		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-		<property name="configLocation">
-			<value>classpath:myFrameUXml/ehcache.xml</value>
-		</property>
-	</bean>
-	<bean id="uICacheManager" class="myFrameU.ehcache.util.UICacheManager">
-		<property name="manager">
-			<ref local="cacheManager" />
-		</property>
-	</bean>
+    <mvc:annotation-driven/>
 
 
+    <bean id="cacheManager"
+          class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation">
+            <value>classpath:myFrameUXml/ehcache.xml</value>
+        </property>
+    </bean>
+    <bean id="uICacheManager" class="myFrameU.ehcache.util.UICacheManager">
+        <property name="manager">
+            <ref local="cacheManager"/>
+        </property>
+    </bean>
 
 
+    <!-- 普通dao -->
+    <bean id="aDao" class="myFrameU.dao.AbstractDaoImpl">
+        <property name="ht">
+            <ref bean="hibernateTemplate_zh"/>
+        </property>
+    </bean>
+    <bean id="aBiz" class="myFrameU.biz.AbstractBizImpl">
+        <property name="aDao">
+            <ref local="aDao"/>
+        </property>
+
+    </bean>
 
 
+    <bean id="accountBiz" class="myFrameU.account.biz.AccountBizImpl">
+        <property name="aDao">
+            <ref local="aDao"/>
+        </property>
+    </bean>
 
 
-	<!-- 普通dao -->
-	<bean id="aDao" class="myFrameU.dao.AbstractDaoImpl">
-		<property name="ht">
-			<ref bean="hibernateTemplate_zh" />
-		</property>
-	</bean>
-	<bean id="aBiz" class="myFrameU.biz.AbstractBizImpl">
-		<property name="aDao">
-			<ref local="aDao" />
-		</property>
-		
-	</bean>
-
-
-
-	<bean id="accountBiz" class="myFrameU.account.biz.AccountBizImpl">
-		<property name="aDao">
-			<ref local="aDao" />
-		</property>
-	</bean>
-
-
-
-
-
-
-	<bean id="scheduler" lazy-init="false"
-		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
-		<property name="jobFactory">
-			<bean class="myFrameU.quartz.util.SpringBeanJobFactory" />
-		</property>
-	</bean>
-
-
-
-
-
-
-
-
-
-
+    <bean id="scheduler" lazy-init="false"
+          class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="jobFactory">
+            <bean class="myFrameU.quartz.util.SpringBeanJobFactory"/>
+        </property>
+    </bean>
 
 
 </beans>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.product.entity">
+	<class name="ProductPrice" table="product_productPrice">
+        <id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="productId" column="productId" type="int"></property>	
+		<property name="productName" column="productName" type="string"></property>		
+		<property name="productImg" column="productImg" type="string"></property>	
+		<property name="xilieName" column="xilieName" type="string"></property>		
+		<property name="baozhuangName" column="baozhuangName" type="string"></property>
+		<property name="shiyongName" column="shiyongName" type="string"></property>	
+		<property name="price1" column="price1" type="float"></property>		
+		<property name="price2" column="price2" type="float"></property>	
+		
+		
+		<property name="toTjrTc" column="toTjrTc" type="float"></property>
+		<property name="price1Price2" column="price1Price2" type="float"></property>
+		
+		
+		<property name="yesproductPrice" column="yesproductPrice" type="int"></property>
+		
+		
+		
+		
+		<property name="productCount" column="productCount" type="int"></property>
+		<property name="saleCount" column="saleCount" type="int"></property>
+		
+		
+		
+		
+		
+		<property name="pickupAddressIds" column="pickupAddressIds" type="string"></property>
+		
+		
+		<property name="keyName1" column="keyName1" type="string"></property>
+		<property name="keyName2" column="keyName2" type="string"></property>
+		<property name="keyName3" column="keyName3" type="string"></property>
+		<property name="keyName4" column="keyName4" type="string"></property>
+		<property name="keyName5" column="keyName5" type="string"></property>
+		
+    </class>
+    
+</hibernate-mapping>

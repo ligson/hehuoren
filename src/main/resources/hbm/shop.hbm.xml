@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.shop.entity">
+	<class name="Shop" table="shop" lazy="true" >
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="shopLevelId" column="shopLevelId" type="int"></property>
+		
+		<property name="name" column="name" type="string"></property>
+		<property name="smallName" column="smallName" type="string"></property>
+		<property name="logo" column="logo" type="string"></property>
+		<property name="phone" column="phone" type="string"></property>
+		<property name="info" column="info" type="string"></property>
+		<property name="specificAddress" column="specificAddress" type="string"></property>
+		<property name="ruzhuDate" column="ruzhuDate" type="java.sql.Timestamp"></property>
+		
+		<property name="specialCount" column="specialCount" type="int"></property>
+		<property name="shoucangCount" column="shoucangCount" type="int"></property>
+		<property name="clinchCount" column="clinchCount" type="int"></property>
+		<property name="clinchPrice" column="clinchPrice" type="float"></property>
+		
+		
+		<property name="productCount" column="productCount" type="int"></property>
+		<property name="mainProductTypeIds" column="mainProductTypeIds" type="string"></property>
+		<property name="totalScore" column="totalScore" type="float"></property>
+		<property name="grade" column="grade" type="int"></property>
+		
+		<property name="addressTreeIds" column="addressTreeIds" type="string"></property>
+		<property name="addressId" column="addressId" type="int"></property>
+		
+		
+		
+		<property name="shopUserId" column="shopUserId" type="int"></property>
+		<property name="certiStatus" column="certiStatus" type="string"></property>
+		<property name="status" column="status" type="string"></property>
+		
+		
+		
+		<property name="ptVip" column="ptVip" type="string"></property>
+		
+		<property name="auctionPeriodCount" column="auctionPeriodCount" type="int"></property>
+		
+				
+	</class>
+</hibernate-mapping>

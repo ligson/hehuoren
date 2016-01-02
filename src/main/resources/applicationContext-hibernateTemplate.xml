@@ -59,65 +59,65 @@
 		
 		<property name="mappingResources">
 			<list>
-				<value>myFrameU/sms/entity/sMSRecord.hbm.xml</value>
-				<value>myFrameU/global/entity/global.hbm.xml</value>
-				<value>myFrameU/integration/entity/integration.hbm.xml</value>
-				<value>myFrameU/integration/entity/integrationItem.hbm.xml</value>
+				<value>hbm/sMSRecord.hbm.xml</value>
+				<value>hbm/global.hbm.xml</value>
+				<value>hbm/integration.hbm.xml</value>
+				<value>hbm/integrationItem.hbm.xml</value>
 				
 				
-				<value>myFrameU/expand/libraryProperty/entity/systemLibraryProperty.hbm.xml</value>
-				<value>myFrameU/expand/libraryProperty/entity/systemLibraryPropertyValue.hbm.xml</value>
-				<value>myFrameU/expand/distribution/entity/propertyDistribute.hbm.xml</value>
-				<value>myFrameU/expand/use/test/entity/testProduct.hbm.xml</value>
-				<value>myFrameU/expand/use/test/entity/testProductType.hbm.xml</value>
+				<value>hbm/systemLibraryProperty.hbm.xml</value>
+				<value>hbm/systemLibraryPropertyValue.hbm.xml</value>
+				<value>hbm/propertyDistribute.hbm.xml</value>
+				<value>hbm/testProduct.hbm.xml</value>
+				<value>hbm/testProductType.hbm.xml</value>
 				
 				
-				<value>myFrameU/address/entity/address.hbm.xml</value>
+				<value>hbm/address.hbm.xml</value>
 				
-				<value>myFrameU/admin/entity/admin.hbm.xml</value>
-				<value>myFrameU/user/entity/user.hbm.xml</value>
-				<value>myFrameU/user/entity/myAddress.hbm.xml</value>
-				<value>myFrameU/user/entity/shoucang.hbm.xml</value>
-				
-				
-				
-				<value>myFrameU/adv/entity/advertingPage.hbm.xml</value>
-				<value>myFrameU/adv/entity/advertising.hbm.xml</value>
-				<value>myFrameU/adv/entity/advertisement.hbm.xml</value>
+				<value>hbm/admin.hbm.xml</value>
+				<value>hbm/user.hbm.xml</value>
+				<value>hbm/myAddress.hbm.xml</value>
+				<value>hbm/shoucang.hbm.xml</value>
 				
 				
 				
+				<value>hbm/advertingPage.hbm.xml</value>
+				<value>hbm/advertising.hbm.xml</value>
+				<value>hbm/advertisement.hbm.xml</value>
 				
 				
 				
-				<value>myFrameU/apply/entity/apply.hbm.xml</value>
-				
-				<value>myFrameU/account/entity/account.hbm.xml</value>
-				<value>myFrameU/account/entity/AccountItem.hbm.xml</value>
-				
-				
-				<value>myFrameU/product/entity/productType.hbm.xml</value>
-				<value>myFrameU/product/entity/productContent.hbm.xml</value>
-				<value>myFrameU/product/entity/product.hbm.xml</value>
-				<value>myFrameU/product/entity/productPrice.hbm.xml</value>
-				<value>myFrameU/product/entity/productPricePropertyValue.hbm.xml</value>
 				
 				
 				
-				<value>myFrameU/history/entity/history.hbm.xml</value>
+				<value>hbm/apply.hbm.xml</value>
 				
-				<value>hhr/order/entity/order.hbm.xml</value>
-				<value>hhr/order/entity/orderItem.hbm.xml</value>
-				<value>hhr/order/entity/pickUpAddress.hbm.xml</value>
-				
-				
-				<value>myFrameU/news/entity/news.hbm.xml</value>
-				<value>myFrameU/news/entity/newsType.hbm.xml</value>
-				<value>myFrameU/news/entity/newsContent.hbm.xml</value>
+				<value>hbm/account.hbm.xml</value>
+				<value>hbm/AccountItem.hbm.xml</value>
 				
 				
+				<value>hbm/productType.hbm.xml</value>
+				<value>hbm/productContent.hbm.xml</value>
+				<value>hbm/product.hbm.xml</value>
+				<value>hbm/productPrice.hbm.xml</value>
+				<value>hbm/productPricePropertyValue.hbm.xml</value>
 				
-				<value>hhr/test/entity/testEntity.hbm.xml</value>
+				
+				
+				<value>hbm/history.hbm.xml</value>
+				
+				<value>hbm/order.hbm.xml</value>
+				<value>hbm/orderItem.hbm.xml</value>
+				<value>hbm/pickUpAddress.hbm.xml</value>
+				
+				
+				<value>hbm/news.hbm.xml</value>
+				<value>hbm/newsType.hbm.xml</value>
+				<value>hbm/newsContent.hbm.xml</value>
+				
+				
+				
+				<value>hbm/testEntity.hbm.xml</value>
 			</list>
 		</property>
 		<property name="eventListeners">
@@ -143,7 +143,7 @@
 
 	 
 	<!-- 配置事务管理器bean,使用HibernateTransactionManager事务管理器 -->
-	<!-- 
+	<!--
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	<bean id="transactionManager"
 	    class="org.springframework.orm.hibernate3.HibernateTransactionManager">

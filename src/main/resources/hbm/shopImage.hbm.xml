@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.shop.entity">
+	<class name="ShopImage" table="shop_shopImage" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		
+				<property name="name" column="name" type="string"></property>
+				<property name="image" column="image" type="string"></property>
+				<property name="shopId" column="shopId" type="int"></property>
+				<property name="imageType" column="imageType" type="string"></property>
+				
+				<property name="cy" column="cy" type="int"></property>
+				
+				<property name="width" column="width" type="string"></property>
+				<property name="height" column="height" type="string"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="myFrameU.sms.entity">
+	<class name="SMSRecord" table="sMSRecord">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="relDate" column="relDate" type="java.sql.Timestamp"></property>
+		<property name="telPhone" column="telPhone" type="string"></property>
+		<property name="sdkMtType" column="sdkMtType" type="string"></property>
+		<property name="sendOrRec" column="sendOrRec" type="string"></property>
+		<property name="content" column="content" type="string"></property>
+		<property name="ext" column="ext" type="string"></property>
+		<property name="stime" column="stime" type="string"></property>
+		<property name="rrid" column="rrid" type="string"></property>
+		
+		
+		
+		<property name="sdkResult" column="sdkResult" type="string"></property>
+		<property name="smsRecordOtherJSON" column="smsRecordOtherJSON" type="string"></property>
+		
+		
+		<!-- 
+		<property name="userId" column="userId" type="int"></property>
+		<property name="shopId" column="shopId" type="int"></property>
+		<property name="osoiId" column="osoiId" type="int"></property>
+		 -->
+		
+		
+		
+	</class>
+</hibernate-mapping>

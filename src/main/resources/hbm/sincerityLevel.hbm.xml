@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.sincerity.entity">
+	<class name="SincerityLevel" table="sincerity_sincerityLevel" lazy="true" >
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="levelName" column="levelName" type="string"></property>
+		<property name="lowScore" column="lowScore" type="float"></property>
+		<property name="heighScore" column="heighScore" type="float"></property>
+	</class>
+</hibernate-mapping>

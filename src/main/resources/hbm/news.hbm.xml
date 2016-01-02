@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="myFrameU.news.entity">
+	<class name="News" table="news" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+
+		<property name="title" column="title" type="string"></property>
+		<property name="title1" column="title1" type="string"></property>
+		<property name="image" column="image" type="string"></property>
+		<property name="info" column="info" type="string"></property>
+		<property name="relDate" column="relDate" type="java.sql.Timestamp"></property>
+		<property name="status" column="status" type="string"></property>
+		
+		
+		
+		<property name="newsTypeId" column="newsTypeId" type="int"></property>
+		<property name="newsTypeROOTId" column="newsTypeROOTId" type="int"></property>
+		<property name="newsTypeTreeIds" column="newsTypeTreeIds" type="string"></property>
+		
+		<property name="newsContentId" column="newsContentId" type="int"></property>
+		
+		<property name="viewsCount" column="viewsCount" type="int"></property>
+		<property name="roleType" column="roleType" type="string"></property>
+		<property name="roleId" column="roleId" type="int"></property>
+		<property name="addressId" column="addressId" type="int"></property>
+		<property name="addressTreeIds" column="addressTreeIds" type="string"></property>
+		
+		
+		<property name="canDel" column="canDel" type="string"></property>
+		
+		
+	</class>
+</hibernate-mapping>

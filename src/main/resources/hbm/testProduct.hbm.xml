@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="myFrameU.expand.use.test.entity">
+	<class name="TestProduct" table="expand_test_testProduct" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="name" column="name" type="string"></property>
+		<property name="productTypeId" column="productTypeId" type="int"></property>
+		<property name="productTypeTreeIds" column="productTypeTreeIds" type="string"></property>
+		
+		<property name="propertyValues_Ids" column="propertyValues_Ids" type="string"></property>
+		<property name="propertyValues_Strs" column="propertyValues_Strs" type="string"></property>
+		
+	</class>
+</hibernate-mapping>

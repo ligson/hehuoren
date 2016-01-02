@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="myFrameU.expand.distribution.entity">
+	<class name="PropertyDistribute" table="expand_propertyDistribute" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="className" column="className" type="string"></property>
+		<property name="dRange" column="dRange" type="string"></property>
+		<property name="propertyId" column="propertyId" type="int"></property>
+		
+		<property name="must" column="must" type="string"></property>
+		<property name="propertyValueIds" column="propertyValueIds" type="string"></property>
+		<!-- <property name="transfer" column="transfer" type="string"></property> -->
+		
+		
+		<property name="priority" column="priority" type="int"></property>
+		
+	</class>
+</hibernate-mapping>

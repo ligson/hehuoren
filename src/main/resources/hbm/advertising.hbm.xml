@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.adv.entity">
+	<class name="Advertising" table="adv_advertising" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		
+				<property name="markedNum" column="markedNum" type="string"></property>
+				<property name="info" column="info" type="string"></property>
+				<property name="priceInfo" column="priceInfo" type="string"></property>
+				<property name="widthAndheight" column="widthAndheight" type="string"></property>
+				<property name="width" column="width" type="int"></property>
+				<property name="height" column="height" type="int"></property>
+				<property name="advType" column="advType" type="string"></property>
+				<property name="status" column="status" type="string"></property>
+				<property name="picNumber" column="picNumber" type="int"></property>
+				<property name="advertingPageNameKey" column="advertingPageNameKey" type="string"></property>
+				<property name="addressId" column="addressId" type="int"></property>
+				<property name="addressTreeIds" column="addressTreeIds" type="string"></property>
+				<property name="image" column="image" type="string"></property>
+				<property name="jifen" column="jifen" type="int"></property>
+				<property name="saleNum" column="saleNum" type="int"></property>
+				<property name="liulanNum" column="liulanNum" type="int"></property>
+				<property name="price" column="price" type="string"></property>
+				<set name="advertisementSet" cascade="all" inverse="true">
+					<key column="advertising_id"></key>
+					<one-to-many class="myFrameU.adv.entity.Advertisement"/>
+				</set>
+				
+		
+		<property name="haveSon" column="haveSon" type="string"></property>
+		<property name="width100" column="width100" type="int"></property>
+	</class>
+</hibernate-mapping>

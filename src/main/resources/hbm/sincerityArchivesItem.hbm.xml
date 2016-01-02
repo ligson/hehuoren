@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.sincerity.entity">
+	<class name="SincerityArchivesItem" table="sincerity_sincerityArchivesItem" lazy="true" >
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="whoclassName" column="whoclassName" type="string"></property>
+		<property name="whopName" column="whopName" type="string"></property>
+		<property name="whoId" column="whoId" type="int"></property>
+		
+		<property name="sincertityArchiversId" column="sincertityArchiversId" type="int"></property>
+		<property name="sincerityTypeId" column="sincerityTypeId" type="int"></property>
+		
+		<property name="addOrMis" column="addOrMis" type="string"></property>
+		
+		
+		<property name="info" column="info" type="string"></property>
+		<property name="title" column="title" type="string"></property>
+		<property name="extraData" column="extraData" type="string"></property>
+		
+		<property name="score" column="score" type="float"></property>
+		<property name="relDate" column="relDate" type="java.sql.Timestamp"></property>
+		
+	</class>
+</hibernate-mapping>

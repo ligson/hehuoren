@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.adv.entity">
+	<class name="AdvertingPage" table="adv_advertingPage" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="name" column="name" type="string"></property>
+		<property name="nameKey" column="nameKey" type="string"></property>
+		
+		
+	</class>
+</hibernate-mapping>

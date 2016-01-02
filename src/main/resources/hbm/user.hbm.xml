@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.user.entity">
+	<class name="User" table="user_user" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+			<property name="userLevelId" column="userLevelId" type="int"></property>
+			<property name="tuijianRenId" column="tuijianRenId" type="int"></property>
+			<property name="tuijianRenNicheng" column="tuijianRenNicheng" type="string"></property>
+			<property name="fensiCount" column="fensiCount" type="int"></property>
+			<property name="beProbationDate" column="beProbationDate" type="java.sql.Timestamp"></property>
+			<property name="beDate" column="beDate" type="java.sql.Timestamp"></property>
+			<property name="my2wm" column="my2wm" type="string"></property>
+			<property name="wxId" column="wxId" type="string"></property>
+			
+			
+			
+			
+			
+			
+			<property name="ifNosubscribe_subscribeEvent" column="ifNosubscribe_subscribeEvent" type="string"></property>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+				<property name="name" column="name" type="string"></property>
+				<property name="bianhao" column="bianhao" type="string"></property>
+				<property name="nicheng" column="nicheng" type="string"></property>
+				<property name="password" column="password" type="string"></property>
+				<property name="telPhone" column="telPhone" type="string"></property>
+				<property name="phone" column="phone" type="string"></property>
+				<property name="email" column="email" type="string"></property>
+				<property name="touxiang" column="touxiang" type="string"></property>
+				<property name="qq" column="qq" type="string"></property>
+				<property name="msn" column="msn" type="string"></property>
+				
+				
+				
+				<property name="sex" column="sex" type="int"></property>
+				<property name="age" column="age" type="int"></property>
+				<property name="addressId" column="addressId" type="int"></property>
+				<property name="addressTreeIds" column="addressTreeIds" type="string"></property>
+				
+				<property name="zhuceDate" column="zhuceDate" type="java.sql.Timestamp"></property>
+				<property name="chushengDate" column="chushengDate" type="java.sql.Timestamp"></property>
+				
+				
+				<property name="zhuceIp" column="zhuceIp" type="string"></property>
+				<property name="selfInfo" column="selfInfo" type="string"></property>
+				<property name="status" column="status" type="string"></property>
+				<property name="zhifubao" column="zhifubao" type="string"></property>
+		
+	
+				
+				<property name="grade" column="grade" type="int"></property>
+				<property name="totalScore" column="totalScore" type="float"></property>
+				
+				<property name="userWw" column="userWw" type="string"></property>
+				
+				
+				
+				<property name="certiStatus" column="certiStatus" type="string"></property>
+				
+				
+	</class>
+</hibernate-mapping>

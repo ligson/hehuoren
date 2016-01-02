@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.apply.entity">
+	<class name="Apply" table="apply_apply" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		
+				<property name="sponsorClassName" column="sponsorClassName" type="string"></property>
+				<property name="sponsorId" column="sponsorId" type="int"></property>
+				<property name="dealWithClassName" column="dealWithClassName" type="string"></property>
+				<property name="dealWithId" column="dealWithId" type="int"></property>
+				<property name="applyTypeKey" column="applyTypeKey" type="string"></property>
+				<property name="applyTitle" column="applyTitle" type="string"></property>
+				<property name="applyContent" column="applyContent" type="string"></property>
+				<property name="speed" column="speed" type="string"></property>
+				<property name="result" column="result" type="string"></property>
+				<property name="remarks" column="remarks" type="string"></property>
+				<property name="sponsorName" column="sponsorName" type="string"></property>
+				
+				<property name="relDate" column="relDate" type="java.sql.Timestamp"></property>
+				<property name="dealDate" column="dealDate" type="java.sql.Timestamp"></property>
+				<property name="extraData" column="extraData" type="string"></property>
+	</class>
+</hibernate-mapping>

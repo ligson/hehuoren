@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.address.entity">
+	<class name="Address" table="address" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="isOpen" column="isOpen" type="int"></property>
+				<property name="name" column="name" type="string"></property>
+				 <many-to-one name="parent" class="myFrameU.address.entity.Address" column="parent_id" cascade="none"></many-to-one>
+				 <property name="fatherId" column="fatherId" type="int"></property>
+				<property name="rootTypeId" column="rootTypeId" type="int"></property>
+				<property name="isROOT" column="isROOT" type="int"></property>
+				<property name="isLeaf" column="isLeaf" type="int"></property>
+				<property name="jibie" column="jibie" type="int"></property>
+				<property name="url" column="url" type="string"></property>
+				<property name="treeId" column="treeId" type="string"></property>
+				
+				
+ 				<set name="childs" cascade="all" lazy="true" inverse="true" batch-size="50">
+					<key column="parent_id"></key>
+					<one-to-many class="myFrameU.address.entity.Address"/>
+				</set>
+		<property name="firstZm" column="firstZm" type="string"></property>
+		<property name="allName" column="allName" type="string"></property>
+		
+		
+		
+		<property name="diqu" column="diqu" type="int"></property>
+		<property name="isHot" column="isHot" type="int"></property>
+	</class>
+</hibernate-mapping>

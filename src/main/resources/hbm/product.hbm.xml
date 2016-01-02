@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.product.entity">
+	<class name="Product" table="product_product">
+        <id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="name" column="name" type="string"></property>	
+		<property name="lunboImage1" column="lunboImage1" type="string"></property>		
+		<property name="lunboImage2" column="lunboImage2" type="string"></property>	
+		<property name="lunboImage3" column="lunboImage3" type="string"></property>		
+		<property name="lunboImage4" column="lunboImage4" type="string"></property>	
+		<property name="lunboImage5" column="lunboImage5" type="string"></property>		
+		<property name="mainImage" column="mainImage" type="string"></property>	
+		
+		
+		<property name="productTypeId" column="productTypeId" type="int"></property>
+		<property name="productTypeTreeIds" column="productTypeTreeIds" type="string"></property>
+		<property name="productContentId" column="productContentId" type="int"></property>
+		<property name="addressId" column="addressId" type="int"></property>
+		<property name="addressTreeIds" column="addressTreeIds" type="string"></property>
+		
+		<property name="productCount" column="productCount" type="int"></property>
+		<property name="status" column="status" type="string"></property>
+		<property name="relDate" column="relDate" type="java.sql.Timestamp"></property>	
+		
+		
+		<property name="propertyValues_Ids" column="propertyValues_Ids" type="string"></property>
+		<property name="propertyValues_Strs" column="propertyValues_Strs" type="string"></property>
+		
+		
+		
+		<property name="price1" column="price1" type="float"></property>
+		<property name="price2" column="price2" type="float"></property>
+		<property name="toTjrTc" column="toTjrTc" type="float"></property>
+		<property name="saleCount" column="saleCount" type="int"></property>
+		
+		<property name="pickupAddressIds" column="pickupAddressIds" type="string"></property>
+		<property name="price1Price2" column="price1Price2" type="float"></property>
+		
+    </class>
+    
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.product.entity">
+	<class name="ProductTesefuwu" table="product_productTesefuwu" >
+        <id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="name" column="name" type="string"></property>	
+		<property name="addProductMust" column="addProductMust" type="boolean"></property>	
+		<property name="tsfwkey" column="tsfwkey" type="string"></property>		
+    </class>
+    
+</hibernate-mapping>

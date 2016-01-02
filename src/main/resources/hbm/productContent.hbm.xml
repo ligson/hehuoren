@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.product.entity">
+	<class name="ProductContent" table="product_productContent" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="productId" column="productId" type="int"></property>
+				<property name="content" column="content" type="string"></property>
+				<property name="contentName" column="contentName" type="string"></property>
+				<property name="info" column="info" type="string"></property>
+	</class>
+</hibernate-mapping>
