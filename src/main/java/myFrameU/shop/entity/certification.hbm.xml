@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.shop.entity">
+	<class name="Certification" table="certification" lazy="true" >
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="whoclassName" column="whoclassName" type="string"></property>
+		<property name="whoId" column="whoId" type="int"></property>
+		<property name="whoName" column="whoName" type="string"></property>
+		<property name="yingyezhizhaoUrl" column="yingyezhizhaoUrl" type="string"></property>
+		<property name="yingyezhizhaoHaoma" column="yingyezhizhaoHaoma" type="string"></property>
+		<property name="zuzhijigoudaimazheng" column="zuzhijigoudaimazheng" type="string"></property>
+		<property name="shuiwudengjizheng" column="shuiwudengjizheng" type="string"></property>
+		<property name="paimaixukezheng" column="paimaixukezheng" type="string"></property>
+		<property name="wenwupmxkzheng" column="wenwupmxkzheng" type="string"></property>
+		
+		<property name="shenfenzhengzUrl" column="shenfenzhengzUrl" type="string"></property>
+		<property name="shenfenzhengfUrl" column="shenfenzhengfUrl" type="string"></property>
+		<property name="shenfenzhenghaoma" column="shenfenzhenghaoma" type="string"></property>
+		<property name="trueName" column="trueName" type="string"></property>
+		
+	
+		<property name="zizhiStatus" column="zizhiStatus" type="string"></property>
+		<property name="shimingStatus" column="shimingStatus" type="string"></property>
+		<property name="yuanyinzizhi" column="yuanyinzizhi" type="string"></property>
+		<property name="yuanyinshiming" column="yuanyinshiming" type="string"></property>
+		
+		
+		
+		
+		
+		
+	</class>
+</hibernate-mapping>

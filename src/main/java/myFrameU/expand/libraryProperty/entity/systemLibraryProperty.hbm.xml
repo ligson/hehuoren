@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="myFrameU.expand.libraryProperty.entity">
+	<class name="SystemLibraryProperty" table="expand_systemLibraryProperty" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="propertyName" column="propertyName" type="string"></property>
+		<property name="propertyKey" column="propertyKey" type="string"></property>
+		<property name="dataType" column="dataType" type="string"></property>
+		
+		<property name="dataFrom" column="dataFrom" type="string"></property>
+		<property name="dataFromWebUrl" column="dataFromWebUrl" type="string"></property>
+		<property name="addType" column="addType" type="string"></property>
+		<property name="showType" column="showType" type="string"></property>
+		
+		
+		<property name="valueDefault" column="valueDefault" type="string"></property>
+		<property name="valueAlternative" column="valueAlternative" type="string"></property>
+		
+		<!-- 
+		<property name="search" column="search" type="boolean"></property>
+		<property name="must" column="must" type="boolean"></property>
+		<property name="queryArg" column="queryArg" type="boolean"></property>
+		<property name="list" column="list" type="boolean"></property>
+		 -->
+		
+		<set name="sysLibraryPropertyValueSet" cascade="all" lazy="false"  inverse="true" batch-size="50" order-by="id">
+			<key column="sysLibraryPropertyId"></key>
+			<one-to-many class="myFrameU.expand.libraryProperty.entity.SystemLibraryPropertyValue" />
+		</set>
+		
+		
+		
+		
+		
+		
+		
+	</class>
+</hibernate-mapping>

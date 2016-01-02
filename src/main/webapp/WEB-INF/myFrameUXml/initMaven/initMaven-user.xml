@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.user.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 初始化user常用的属性，如如果错误指向的页面，如登录成功后需要执行的方法 -->
+	<userLoginErrorPage>loginError</userLoginErrorPage>
+	<!-- 该类方法的实现必须要符合这里定的参数规则，user,req,cache,aBiz -->
+	<!-- methodKey是不能修改的 -->
+	<userAfter className="myFrame.user.AfterUser">
+	    <method methodKey="afterLogin">afterLogin</method>
+	    <method methodKey="afterRegist">afterRegist</method>
+	</userAfter>
+	
+	<!-- 配置收藏 -->
+	<!-- 级联操作被收藏者的收藏数量 -->
+	<shoucangs>
+	    <shoucang className="myFrameU.shop.entity.Shop" shoucangCountField="shoucangCount"></shoucang>
+	    <shoucang className="yishupaipai.auction.entity.AuctionPeriod" shoucangCountField="shoucangCount"></shoucang>
+	    <shoucang className="yishupaipai.special.entity.Special" shoucangCountField="shoucangCount"></shoucang>
+	</shoucangs>
+	
+</initMaven>

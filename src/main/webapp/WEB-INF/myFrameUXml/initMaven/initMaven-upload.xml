@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化的实体类 -->
+	<initMavenClass>myFrameU.upload.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 调用时必须传递saveType参数，且saveType参数格式为uediotr-product， -->
+	<!-- 初始化ueditor上传图片 -->
+	<upLoadImages>
+	        <!-- 产品简介的上传图片 -->
+	        <upLoadImage>
+	            <saveType>ueditor-product</saveType>
+	            <savePath>/img/product/</savePath>
+	            
+	            <savePathMin>/img/product/min/</savePathMin>
+	            <getMinWay>narrow</getMinWay>
+	            <minWidth>200</minWidth>
+	            <minHeight>200</minHeight>
+	            
+	            <maxWidth>1000</maxWidth>
+	            <maxHeight>100000</maxHeight>
+	            <water>true</water>
+	            <waterImage>/pcjsp/image/water.png</waterImage>
+	        </upLoadImage>
+	        <!-- 产品封面图的上传图片 -->
+	        <upLoadImage>
+	            <saveType>product</saveType>
+	            <savePath>/img/product/</savePath>
+	            <savePathMin>/img/product/min/</savePathMin>
+	            <getMinWay>narrow</getMinWay>
+	            <minWidth>400</minWidth>
+	            <minHeight>400</minHeight>
+	            <maxWidth>1000</maxWidth>
+	            <maxHeight>1000</maxHeight>
+	        </upLoadImage>
+	        
+	        <!-- 专场封面图片 -->
+	        <upLoadImage>
+	            <saveType>specialBanner</saveType>
+	            <savePath>/img/special/</savePath>
+	            <savePathMin>/img/special/min/</savePathMin>
+	            <getMinWay>narrow</getMinWay>
+	            <minWidth>2000</minWidth>
+	            <minHeight>300</minHeight>
+	            <maxWidth>2000</maxWidth>
+	            <maxHeight>300</maxHeight>
+	        </upLoadImage>
+	        <upLoadImage>
+	            <saveType>specialFm</saveType>
+	            <savePath>/img/special/</savePath>
+	            <savePathMin>/img/special/min/</savePathMin>
+	            <getMinWay>narrow</getMinWay>
+	            <minWidth>520</minWidth>
+	            <minHeight>200</minHeight>
+	            <maxWidth>520</maxWidth>
+	            <maxHeight>200</maxHeight>
+	        </upLoadImage>
+	        
+	        
+	        
+	        
+	        <!-- 店铺LOGO -->
+	         <upLoadImage>
+	            <saveType>shopLogo</saveType>
+	            <savePath>/img/shop/</savePath>
+	            <savePathMin>/img/shop/min/</savePathMin>
+	            <getMinWay>narrow</getMinWay>
+	            <minWidth>200</minWidth>
+	            <minHeight>200</minHeight>
+	            <maxWidth>1000</maxWidth>
+	            <maxHeight>1000</maxHeight>
+	        </upLoadImage>
+	        
+	         
+	         <!-- 用户头像 -->
+	         <upLoadImage>
+	            <saveType>userTx</saveType>
+	            <savePath>/img/user/</savePath>
+	            <savePathMin>/img/user/min/</savePathMin>
+	            <getMinWay>narrow</getMinWay>
+	            <minWidth>200</minWidth>
+	            <minHeight>200</minHeight>
+	            <maxWidth>1000</maxWidth>
+	            <maxHeight>1000</maxHeight>
+	        </upLoadImage>
+	        
+	        
+	        <!-- 广告图片 -->
+	         <upLoadImage>
+	            <saveType>adver</saveType>
+	            <savePath>/img/adv/</savePath>
+	            <savePathMin>/img/adv/min/</savePathMin>
+	            <maxWidth>5000</maxWidth>
+	            <maxHeight>2000</maxHeight>
+	        </upLoadImage>
+	        
+	         
+	         
+	         <!-- 认证 -->
+	         <upLoadImage>
+	            <saveType>certification</saveType>
+	            <savePath>/img/certification/</savePath>
+	            <savePathMin>/img/certification/min/</savePathMin>
+	            <maxWidth>1600</maxWidth>
+	            <maxHeight>1000</maxHeight>
+	        </upLoadImage>
+	        
+	         
+	         
+	         
+	         <!-- 上传shop的首页轮播图 -->
+	         <upLoadImage>
+	            <saveType>shopTemplate_IndexFocus</saveType>
+	            <savePath>/img/shop/</savePath>
+	            <savePathMin>/img/shop/min/</savePathMin>
+	            <maxWidth>1000</maxWidth>
+	            <maxHeight>400</maxHeight>
+	        </upLoadImage>
+	         <upLoadImage>
+	            <saveType>shopTemplate_banner</saveType>
+	            <savePath>/img/shop/</savePath>
+	            <savePathMin>/img/shop/min/</savePathMin>
+	            <maxWidth>2000</maxWidth>
+	            <maxHeight>600</maxHeight>
+	        </upLoadImage>
+	        
+	         
+	         
+	         
+	          <!-- 新闻简介的上传图片 -->
+	        <upLoadImage>
+	            <saveType>ueditor-news</saveType>
+	            <savePath>/img/news/</savePath>
+	            
+	            <savePathMin>/img/news/min/</savePathMin>
+	            <getMinWay>narrow</getMinWay>
+	            <minWidth>200</minWidth>
+	            <minHeight>200</minHeight>
+	            
+	            <maxWidth>1000</maxWidth>
+	            <maxHeight>100000</maxHeight>
+	            <water>true</water>
+	            <waterImage>/pcjsp/image/water.png</waterImage>
+	        </upLoadImage>
+	         
+	         
+	         
+	         
+	         
+	         
+	         
+	         
+	         
+	         
+	         
+	</upLoadImages>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 
+	
+	
+	<upLoadImages>
+	        产品简介的上传图片
+	        <upLoadImage>
+	            <saveType>ueditor-product</saveType>
+	            <savePath>/img/product/</savePath>
+	            
+	           	
+	            <getMinWay>narrow</getMinWay>获取小图片的方式，cut和narrow两种可选
+	            <minWidth>300</minWidth>
+	            <minHeight>300</minHeight>
+	            <savePathMin>/img/product/min/</savePathMin> 注意路径最后要加上/
+	            
+	            <maxWidth>1000</maxWidth>
+	            <maxHeight>100000</maxHeight>
+	            
+	            <water>true</water>
+	            <waterImage>/image/water.png</waterImage>
+	            
+	        </upLoadImage>
+	</upLoadImages>
+	
+	
+	
+	
+	
+	 -->
+</initMaven>

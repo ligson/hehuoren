@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.news.entity">
+	<class name="NewsContent" table="newsContent" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="newsId" column="newsId" type="int"></property>
+		
+				<property name="contentName1" column="contentName1" type="string"></property>
+				<property name="contentValue1" column="contentValue1" type="string"></property>
+				
+				<property name="contentName2" column="contentName2" type="string"></property>
+				<property name="contentValue2" column="contentValue2" type="string"></property>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+/***************************888用户首页开始*************************/
+.userInfoBox{width:100%;float:left;}
+.userInfoBox .top{width:100%;height:auto;}
+.userInfoBox .top .mui-navigate-right{text-align: center;}
+.userInfoBox .bot{padding-top:10px;}
+.userInfoBox .bot ul li{display:block;float:left;width:auto;
+background:#eee;
+margin-left:5px;
+width:23%;
+height:50px;
+padding-top:10px;
+}
+.userInfoBox .bot ul li p{text-align: center;}
+.userIndexNavBox{float:left;width:100%;margin-top:20px;}
+.logBox{float:left;width:100%;margin-top:20px;}
+.mui-btn-block{padding:10px 0px;}
+/***************************888用户首页结束*************************/
+
+
+
+/***************************用户account开始*************************/
+.accountInfoBox .bot ul li{width:18%}
+.tableListBox table{width:100%}
+.tableListBox table tr td{font-size:12px;padding:5px;}
+.tableListBox table thead tr td{background:#eee;}
+
+
+/***************************用户account开始*************************/

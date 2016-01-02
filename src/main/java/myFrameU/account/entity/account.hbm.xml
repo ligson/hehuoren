@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.account.entity">
+	<class name="Account" table="account" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		
+		<property name="whoclassName" column="whoclassName" type="string"></property>
+		<property name="whoId" column="whoId" type="int"></property>
+		<property name="whoName" column="whoName" type="string"></property>
+		
+		
+		<property name="zhifubao" column="zhifubao" type="string"></property>
+		<property name="yinhangka" column="yinhangka" type="string"></property>
+		<property name="yinhangkaType" column="yinhangkaType" type="string"></property>
+		<property name="isQueren" column="isQueren" type="int"></property>
+
+		
+		<property name="totalPrice" column="totalPrice" type="float"></property>
+		<property name="frozenPrice" column="frozenPrice" type="float"></property>
+		<property name="availablePrice" column="availablePrice" type="float"></property>
+		
+		<property name="xcPrice" column="xcPrice" type="float"></property>
+		<property name="xsPrice" column="xsPrice" type="float"></property>
+		
+		
+		<set name="accountItemSet" cascade="all" order-by="id" batch-size="5"  inverse="true">
+			<key column="account_id"></key>
+			<one-to-many class="myFrameU.account.entity.AccountItem"/>
+		</set>
+		
+		<property name="withdrawalsPwd" column="withdrawalsPwd" type="string"></property>
+		<property name="addressId" column="addressId" type="int"></property>
+		<property name="addressTreeIds" column="addressTreeIds" type="string"></property>
+		
+	</class>
+</hibernate-mapping>

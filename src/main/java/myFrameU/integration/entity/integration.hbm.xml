@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.integration.entity">
+	<class name="Integration" table="integration" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+				<property name="total" column="total" type="float"></property>
+				<set name="inteItemSet" cascade="all"  inverse="true" >
+					<key column="integration_id"></key>
+					<one-to-many class="myFrameU.integration.entity.IntegrationItem" />
+				</set>
+				
+				
+				
+				<property name="who" column="who" type="string"></property>
+				<property name="whoId" column="whoId" type="int"></property>
+				<property name="addressTreeIds" column="addressTreeIds" type="string"></property>
+				<property name="addressId" column="addressId" type="int"></property>
+	</class>
+</hibernate-mapping>

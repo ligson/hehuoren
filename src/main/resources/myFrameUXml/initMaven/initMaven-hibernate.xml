@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.util.sshUtil.init.InitMavenImpl</initMavenClass>
+	
+	<entityTables>
+	    <entityTable entity="myFrameU.sms.entity.SMSRecord" table="sMSRecord"></entityTable>
+	    <entityTable entity="myFrameU.global.entity.Global" table="webGlobal"></entityTable>
+	    
+	    <entityTable entity="myFrameU.integration.entity.IntegrationItem" table="integrationItem"></entityTable>
+	    <entityTable entity="myFrameU.integration.entity.Integration" table="Integration"></entityTable>
+	    
+	    <entityTable entity="myFrameU.expand.libraryProperty.entity.SystemLibraryProperty" table="expand_systemLibraryProperty"></entityTable>
+	    <entityTable entity="myFrameU.expand.libraryProperty.entity.SystemLibraryPropertyValue" table="expand_systemLibraryPropertyValue"></entityTable>
+	    <entityTable entity="myFrameU.expand.distribution.entity.SystemLibraryPropertyValue" table="expand_propertyDistribute"></entityTable>
+	    <entityTable entity="myFrameU.expand.use.test.entity.TestProduct" table="expand_test_testProduct"></entityTable>
+	    <entityTable entity="myFrameU.expand.use.test.entity.TestProductType" table="expand_test_testProductType"></entityTable>
+
+	    
+	   <entityTable entity="myFrameU.address.entity.Address" table="address"></entityTable>
+	    <entityTable entity="myFrameU.admin.entity.Admin" table="admin"></entityTable>
+	    
+	    
+	    
+	   <entityTable entity="myFrameU.user.entity.User" table="user_user"></entityTable>
+	   <entityTable entity="myFrameU.user.entity.MyAddress" table="user_myAddress"></entityTable>
+	   <entityTable entity="myFrameU.user.entity.Shoucang" table="user_shoucang"></entityTable>
+	   <entityTable entity="yishupaipai.user.entity.UserLevel" table="user_userLevel"></entityTable>
+	   <entityTable entity="yishupaipai.user.entity.RemindSettings" table="user_remindSettings"></entityTable>
+	    
+	   
+	    <entityTable entity="myFrameU.adv.entity.AdvertingPage" table="adv_advertingPage"></entityTable>
+	    <entityTable entity="myFrameU.adv.entity.Advertising" table="adv_advertising"></entityTable>
+	    <entityTable entity="myFrameU.adv.entity.Advertisement" table="adv_advertisement"></entityTable>
+	    
+	    
+	    
+	   <entityTable entity="myFrameU.apply.entity.Apply" table="apply_apply"></entityTable>
+	   <entityTable entity="myFrameU.account.entity.Account" table="account"></entityTable>
+	   <entityTable entity="myFrameU.account.entity.AccountItem" table="accountItem"></entityTable> 
+	    
+	    
+	    
+	   <entityTable entity="myFrameU.shop.entity.Certification" table="certification"></entityTable> 
+	    
+	    
+	    
+	   
+	   <entityTable entity="myFrameU.product.entity.ProductType" table="product_productType"></entityTable> 
+	   <entityTable entity="myFrameU.product.entity.ProductContent" table="product_productContent"></entityTable>
+	   <entityTable entity="myFrameU.product.entity.Product" table="product_product"></entityTable>
+		<entityTable entity="myFrameU.product.entity.ProductPrice" table="product_productPrice"></entityTable>
+	   <entityTable entity="myFrameU.product.entity.ProductPricePropertyValue" table="product_productPricePropertyValue"></entityTable>
+	   
+	   
+	   <entityTable entity="hhr.order.entity.Order" table="order_order"></entityTable>	 
+	   <entityTable entity="hhr.order.entity.OrderItem" table="order_orderItem"></entityTable>	 
+	   <entityTable entity="hhr.order.entity.PickUpAddress" table="order_pickUpAddress"></entityTable>	 
+	   
+	   
+	   
+	   
+	   <entityTable entity="myFrameU.history.entity.History" table="history"></entityTable> 
+	   
+	   
+	   <entityTable entity="myFrameU.news.entity.News" table="news"></entityTable>
+	   <entityTable entity="myFrameU.news.entity.NewsType" table="newsType"></entityTable>
+	   <entityTable entity="myFrameU.news.entity.NewsContent" table="newsContent"></entityTable>
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	</entityTables>
+</initMaven>

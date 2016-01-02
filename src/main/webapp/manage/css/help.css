@@ -1,0 +1,22 @@
+.hgroup{width:950px;min-height:50px;color:#666;padding:30px;margin:0 auto;float:left;}
+.hgroup .top{width:100%;height:30px;border-bottom:1px solid #eee;}
+.hgroup .top h2{font-weight: bold;font-size: 16px;color:#777;}
+.hgroup .bot{font-size:14px;padding-left:30px;padding-top:10px;float:left;}
+.hgroup .bot ul li{display:block;float:left;padding:5px;list-style: disc;line-height: 30px;height:30px;font-size:14px;width:800px;}
+.numB{padding-left:2px;padding-right:2px;}
+
+.exampleBox{width:800px;min-height:30px;padding:10px;  border: 1px solid #f5f0e9;clear:both;float:left;
+  color: #c6b18d;
+  background-color: #fcf7ee;line-height: 24px;margin-top:10px;}
+
+.smallDl dd{display:block;float:left;padding-left:50px;}
+
+
+
+
+
+
+
+
+
+

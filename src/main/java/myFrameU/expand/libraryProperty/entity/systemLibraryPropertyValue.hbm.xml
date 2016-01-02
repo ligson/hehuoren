@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="myFrameU.expand.libraryProperty.entity">
+	<class name="SystemLibraryPropertyValue" table="expand_systemLibraryPropertyValue" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="pvalue" column="pvalue" type="string"></property>
+		<many-to-one name="sysLibraryProperty" class="myFrameU.expand.libraryProperty.entity.SystemLibraryProperty" column="sysLibraryPropertyId" cascade="none"></many-to-one>
+		<property name="defaultValue" column="defaultValue" type="boolean"></property>
+		
+	</class>
+</hibernate-mapping>

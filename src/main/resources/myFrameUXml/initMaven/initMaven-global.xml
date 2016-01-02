@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.global.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 初始化修改global之后的级联操作，在哪个类里 -->
+	<modGlobalClass status="close">myFrame.global.ModGlobal</modGlobalClass>
+	<needModGlobalNamepys>
+	    <!-- 每次拍卖默认时长，除了专场 -->
+	    <needModGlobalNamepy>auctionTime_noSpecial</needModGlobalNamepy>
+	</needModGlobalNamepys>
+</initMaven>

@@ -1,0 +1,50 @@
+html,body,div,p,ul,li,a,span,img,h1,h2,h3,h4,tbody,tr,td{
+margin:0 auto;
+margin:0px;
+padding:0px;
+font-size:100%;
+font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Arial,sans-serif;
+}
+img{border:none}
+body{background:#000000;overflow: hidden;}
+
+.outer{margin:0 auto;width:900px;height:713px;background:#000000 url(../img/login.jpg) repeat-x;}
+.formDiv{width:300px;height:200px;background:none;position: relative;left:350px;top:200px;}
+.td1{width:64px;}
+.formDiv tr td{float:left;height:25px;width:165px;padding-left:22px;padding-top:10px;}
+.lg_form{float:left;height:200px;width:300px;position: relative;}
+.lg_name,.lg_pass{clear:both;float:left;background:none;border:none;height:35px;width:180px;position: relative;}
+.lg_but{clear:both;float:left;background:none;border:none;height:43px;width:114px;position: relative;}
+.lg_name{left:45px;top:28px;}
+.lg_pass{left:45px;top:40px;}
+.lg_but{left:46px;top:65px;}
+.lg_name input,.lg_pass input{position: relative;float:left;background:none;border:none;height:25px;width:165px;padding-left:22px;padding-top:10px;font-weight:700px;font-size:14px;font-family:"\5FAE\8F6F\96C5\9ED1",Tahoma,Arial,"\5b8b\4f53",sans-serif;}
+.lg_but input{position: relative;float:left;background:none;border:none;}
+input.password{margin-top:3px;}
+.yanzheng{width:50px;}
+.rs{width:80px;height:30px;cursor: pointer;background:none;border:none;}
+ 
+.sb{width:120px;height:45px;cursor: pointer;background:none;border:none;}
+a{font-size:12px;color:#333;}
+#yanzhengImg{cursor: pointer;}
+
+#alertYzmDiv{position: absolute;top:-30px;left:300px;}
+/****************简易alert开始************************/
+#myAlert{width:200px;height:150px;position: absolute;top:50%;left:50%;background-color:#eee;z-index:100000000;display:none;}
+.myAlertI{width:196px;height:146px;margin:2px;background-color:#fff;border:1px solid #ccc;}
+.myAlertI .title{width:196px;height:25px;border-bottom:1px solid #ccc;background:#eee;}
+.myAlertI .foot{width:196px;height:30px;border-top:1px solid #ccc;background:#eee;position: relative;top:3px;}
+.myAlertI .foot .footBut{display:block;float:left;position: absolute;right:0px;width:60px;height:22px;top:3px;right:10px;background:#fff;border:1px solid #ccc;
+line-height: 22px;color:#666;font-weight: 700;text-align: center;text-decoration: none;border-radius:3px;
+}
+.myAlertI .foot .footBut:hover{text-decoration: none;background:#e64145;color:#fff;}
+.myAlertI .foot .footBut.footButOk{right:80px;}
+
+.myAlertI .title span{line-height: 25px;padding-left:5px;color:#333;font-weight: 700;letter-spacing: 1px;}
+.myAlertI .content{width:196px;height:121px;padding:10px;position: relative;top:0px;}
+.myAlertI .macTipImg{background:url(../img/ico_warn.png) no-repeat;position: absolute;top:50px;left:10px;width:50px;height:50px;}
+.myAlertI .macTipImg.ok{background-position: -100px -0px;}
+.myAlertI .macTipImg.error{background-position: -100px -50px;}
+.myAlertI .macTipImg.jinggao{background-position: -100px -100px;}
+.myAlertI .content .contentData{position: absolute;right:10px;width:100px;height:auto;font-size: 12px !important;}
+/****************简易alert结束************************/

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.shop.entity">
+	<class name="ShopTemplateSimple" table="shop_shopTemplateSimple" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		
+				<property name="shopId" column="shopId" type="int"></property>
+				<property name="bannerBackground" column="bannerBackground" type="string"></property>
+				<property name="banner" column="banner" type="string"></property>
+				<property name="smallFocus1" column="smallFocus1" type="string"></property>
+				<property name="smallFocus2" column="smallFocus2" type="string"></property>
+				<property name="smallFocus3" column="smallFocus3" type="string"></property>
+				<property name="smallFocus4" column="smallFocus4" type="string"></property>
+				<property name="smallFocus5" column="smallFocus5" type="string"></property>
+				
+				<property name="bigBackground" column="bigBackground" type="string"></property>
+				<property name="footerBackgroundColor" column="footerBackgroundColor" type="string"></property>
+				
+				<property name="divBorderWidth" column="divBorderWidth" type="string"></property>
+				<property name="divBorderColor" column="divBorderColor" type="string"></property>
+				
+				<property name="menuBg" column="menuBg" type="string"></property>
+				<property name="menuHoverBg" column="menuHoverBg" type="string"></property>
+				<property name="titleBg" column="titleBg" type="string"></property>
+				<property name="titleHeight" column="titleHeight" type="string"></property>
+				<property name="titleFontColor" column="titleFontColor" type="string"></property>
+				<property name="css" column="css" type="string"></property>
+				
+	</class>
+</hibernate-mapping>

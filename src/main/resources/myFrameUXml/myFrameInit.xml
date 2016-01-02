@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<myFrameInits>
+    <spring-listener>
+        <initMaven-xmlPath>E:/合伙人/application/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/hehuoren/WEB-INF/myFrameUXml/initMaven/</initMaven-xmlPath>
+        <listener-myClass method="initStatistics">myFrame.spring.listener.MyContextLoaderListenerOverWrite</listener-myClass>
+    </spring-listener>
+</myFrameInits>

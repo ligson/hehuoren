@@ -1,0 +1,43 @@
+#layout_body{margin-top:0px;}
+.topStatusBox{width:1202px;height:100px;margin:0 auto;}
+
+.pub-steps.shopSpecial.buildingSpecial ul li{width:170px;height:93px;}
+.pub-steps.shopSpecial.closeSpecial ul li{width:230px;height:93px;}
+.step-bot{position: absolute;bottom:10px;left: 65px;width:100%;font-size:14px;}
+
+.topTabBox{width:1200px;height:50px;margin:0 auto;}
+.topTabBox ul{display:block;float:left;width:100%;height:100%}
+.topTabBox ul li{display:block;float:left;width:240px;height:100%;height:50px;}
+.topTabBox ul li span{line-height: 50px;color:#666;font-size:16px;text-align: left;font-weight:bold;text-shadow: white;}
+.topTabBox ul li span a:hover{text-decoration: underline;}
+.tabGroup{  width: 1180px;
+  min-height: 100px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #d9dadc;
+  overflow: hidden;margin-bottom:20px;padding:10px;}
+  
+.tabGroup table {width:100%}
+.tabGroup table tr td{padding:5px;border-bottom:1px solid #eee;}
+.tabGroup table thead tr td{background:#FFFFE0 ;}
+.tabGroup a:hover{text-decoration: underline;}
+.tabGroup .tipBox{  border: 1px solid #f5f0e9;
+  color: #c6b18d;
+  background-color: #fcf7ee;
+  padding: 10px;}
+
+
+#specialAuctionBox .left{float:left;width:579px;border-right:2px solid #ddd;height:auto;padding-right:10px;}
+#specialAuctionBox .right{float:left;width:579px;padding-left:10px;}
+#specialAuctionBox .left .top,#specialAuctionBox .right .top{width:100%;height:30px;line-height: 30px;font-size:14px;border-bottom:1px solid #ddd;}
+#auctionRightId{width:1160px !important;}
+
+
+
+
+
+
+
+
+
+

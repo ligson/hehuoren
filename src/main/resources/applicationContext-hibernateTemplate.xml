@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+        xmlns:context="http://www.springframework.org/schema/context"  
+        xmlns:mvc="http://www.springframework.org/schema/mvc"  
+        xmlns:cache="http://www.springframework.org/schema/cache"
+         xmlns:tx="http://www.springframework.org/schema/tx"
+        xsi:schemaLocation="  
+          http://www.springframework.org/schema/beans  
+          http://www.springframework.org/schema/beans/spring-beans-3.2.xsd  
+          http://www.springframework.org/schema/context  
+          http://www.springframework.org/schema/context/spring-context-3.2.xsd  
+          http://www.springframework.org/schema/mvc      
+          http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+          http://www.springframework.org/schema/tx
+ 		  http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+          http://www.springframework.org/schema/cache ">
+    
+
+	<bean id="dataSourceC3p_zh" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="jdbcUrl">
+			<value>jdbc:mysql://localhost:3306/hehuoren?characterEncoding=utf-8</value>
+		</property>
+		<property name="user">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>password</value>
+		</property>
+		<property name="initialPoolSize" value="3" />
+		<property name="maxPoolSize" value="10" />
+		<property name="minPoolSize" value="2" />
+		<property name="acquireIncrement" value="3" />
+		<property name="maxIdleTime" value="600" />
+		<property name="maxStatements" value="0" />
+		<property name="maxStatementsPerConnection" value="80" />
+	</bean>
+	
+	
+	<bean id="sessionFactory_zh"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSourceC3p_zh" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.dialect">myFrameU.util.commonUtil.mysql.ExtendedMySQLDialect</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.generate_statistics">true</prop> 
+			</props>
+		</property>
+		
+		
+		<property name="mappingResources">
+			<list>
+				<value>myFrameU/sms/entity/sMSRecord.hbm.xml</value>
+				<value>myFrameU/global/entity/global.hbm.xml</value>
+				<value>myFrameU/integration/entity/integration.hbm.xml</value>
+				<value>myFrameU/integration/entity/integrationItem.hbm.xml</value>
+				
+				
+				<value>myFrameU/expand/libraryProperty/entity/systemLibraryProperty.hbm.xml</value>
+				<value>myFrameU/expand/libraryProperty/entity/systemLibraryPropertyValue.hbm.xml</value>
+				<value>myFrameU/expand/distribution/entity/propertyDistribute.hbm.xml</value>
+				<value>myFrameU/expand/use/test/entity/testProduct.hbm.xml</value>
+				<value>myFrameU/expand/use/test/entity/testProductType.hbm.xml</value>
+				
+				
+				<value>myFrameU/address/entity/address.hbm.xml</value>
+				
+				<value>myFrameU/admin/entity/admin.hbm.xml</value>
+				<value>myFrameU/user/entity/user.hbm.xml</value>
+				<value>myFrameU/user/entity/myAddress.hbm.xml</value>
+				<value>myFrameU/user/entity/shoucang.hbm.xml</value>
+				
+				
+				
+				<value>myFrameU/adv/entity/advertingPage.hbm.xml</value>
+				<value>myFrameU/adv/entity/advertising.hbm.xml</value>
+				<value>myFrameU/adv/entity/advertisement.hbm.xml</value>
+				
+				
+				
+				
+				
+				
+				<value>myFrameU/apply/entity/apply.hbm.xml</value>
+				
+				<value>myFrameU/account/entity/account.hbm.xml</value>
+				<value>myFrameU/account/entity/AccountItem.hbm.xml</value>
+				
+				
+				<value>myFrameU/product/entity/productType.hbm.xml</value>
+				<value>myFrameU/product/entity/productContent.hbm.xml</value>
+				<value>myFrameU/product/entity/product.hbm.xml</value>
+				<value>myFrameU/product/entity/productPrice.hbm.xml</value>
+				<value>myFrameU/product/entity/productPricePropertyValue.hbm.xml</value>
+				
+				
+				
+				<value>myFrameU/history/entity/history.hbm.xml</value>
+				
+				<value>hhr/order/entity/order.hbm.xml</value>
+				<value>hhr/order/entity/orderItem.hbm.xml</value>
+				<value>hhr/order/entity/pickUpAddress.hbm.xml</value>
+				
+				
+				<value>myFrameU/news/entity/news.hbm.xml</value>
+				<value>myFrameU/news/entity/newsType.hbm.xml</value>
+				<value>myFrameU/news/entity/newsContent.hbm.xml</value>
+				
+				
+				
+				<value>hhr/test/entity/testEntity.hbm.xml</value>
+			</list>
+		</property>
+		<property name="eventListeners">
+			<map>
+				<entry key="post-update">
+					<bean class="org.hibernate.search.event.FullTextIndexEventListener" />
+				</entry>
+				<entry key="post-insert">
+					<bean class="org.hibernate.search.event.FullTextIndexEventListener" />
+				</entry>
+				<entry key="post-delete">
+					<bean class="org.hibernate.search.event.FullTextIndexEventListener" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="hibernateTemplate_zh" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory">
+			<ref local="sessionFactory_zh" />
+		</property>
+	</bean>
+
+
+	 
+	<!-- 配置事务管理器bean,使用HibernateTransactionManager事务管理器 -->
+	<!-- 
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	<bean id="transactionManager"
+	    class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	        <property name="sessionFactory" ref="sessionFactory_zh"/>
+	</bean>
+	 -->
+</beans>

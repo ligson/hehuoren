@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.expand.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 初始化想要分配属性的类/对象-->
+	<deistributeProperty-classes>
+	    <deistributions className="myFrameU.expand.use.test.entity.TestProduct" dRange="ALL" text="为Product类全部数据分配属性"></deistributions>
+	    <deistributions className="myFrameU.expand.use.test.entity.TestProduct" dRange="{'key':'productTypeId','value':'1'}"  text="为TestProduct类部分数据{productTypeId=1}分配属性"></deistributions>
+	    <deistributions className="myFrameU.expand.use.test.entity.TestProduct" dRange="{'key':'productTypeId','value':'2'}"  text="为TestProduct类部分数据{productTypeId=2}分配属性"></deistributions>
+	    <deistributions className="myFrameU.product.entity.Product" dRange="ALL"  text="性"></deistributions>
+	</deistributeProperty-classes>
+</initMaven>

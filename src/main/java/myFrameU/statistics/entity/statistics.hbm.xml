@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.statistics.entity">
+	<class name="Statistics" table="shop_statistics" lazy="true" >
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		
+		<property name="whoclassName" column="whoclassName" type="string"></property>
+		<property name="whoId" column="whoId" type="int"></property>
+		<property name="whoName" column="whoName" type="string"></property>
+		<property name="flow_pv" column="flow_pv" type="int"></property>
+		<property name="flow_uv" column="flow_uv" type="int"></property>
+		<property name="flow_pvCuv" column="flow_pvCuv" type="float"></property>
+		<property name="flow_tradeUCallU" column="flow_tradeUCallU" type="float"></property>
+		
+		
+		<property name="sale_tradeAllPrice" column="sale_tradeAllPrice" type="float"></property>
+		<property name="sale_tradeCount" column="sale_tradeCount" type="int"></property>
+		<property name="sale_tradeUserCount" column="sale_tradeUserCount" type="int"></property>
+		<property name="sale_tradePriceCtradeUserCount" column="sale_tradePriceCtradeUserCount" type="float"></property>
+		<property name="relDate" column="relDate" type="java.sql.Timestamp"></property>
+		
+				
+	</class>
+</hibernate-mapping>

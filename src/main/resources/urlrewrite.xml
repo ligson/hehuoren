@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 2.6//EN" "urlrewrite2.6.dtd">  
+<urlrewrite>  
+
+	<rule>  
+       <from>/welcome.html</from>  
+       <to type="forward" >/f_index\.do?method=execute&amp;forwardPage=welcome</to> 
+       <set name="address">true</set>
+   </rule>
+
+	<rule>  
+       <from>(.*)/index.html</from>  
+       <to type="forward" >/f_index\.do?method=execute&amp;addressStr=$1</to> 
+       <set name="address">true</set>
+   </rule>
+   
+
+	<!-- task-->
+  	<rule>  
+        <from>/toAddTask.html</from>  
+       <to type="forward">/f_task\.do?method=toAdd</to> 
+    </rule>
+   
+	
+
+
+	<!-- 预约 -->
+  	<rule>  
+        <from>/yuyue-sw([0-9]+)-st([0-9]+)-wt([0-9]+)-sid([0-9]+)-sjs([0-9]+)-gd([0-9]+).html</from>  
+       <to type="forward">/f_yuyue\.do?method=toAdd&amp;shopOrweb=$1&amp;ifShopYyType=$2&amp;ifWebYyType=$3&amp;shopId=$4&amp;shejishiId=$5&amp;gongdiId=$6</to> 
+    </rule>
+   
+ 
+ 	<!-- 前台问答系统开始 -->
+ 	<rule>  
+        <from>/ask/$</from>  
+       <to type="forward">/f_question\.do?method=index</to> 
+   </rule>
+  	<rule>  
+        <from>/ask/question([0-9]+).html</from>  
+       <to type="forward">/f_question\.do?method=findQuestionById&amp;id=$1</to> 
+   </rule>
+   <rule>  
+        <from>/ask/questionList-bigQT([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_question\.do?method=findQues&amp;queryArgs=[{'key':'questionTypeBigId','value':'$1','filedType':'int'},{'key':'status','value':'1','filedType':'int'}]&amp;pageMethod=number&amp;currentPage=$2&amp;needQueryByAddress=noNeed</to> 
+   </rule>
+   <rule>  
+        <from>/ask/questionList-qt([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_question\.do?method=findQues&amp;queryArgs=[{'key':'questionTypeId','value':'$1','filedType':'int'},{'key':'status','value':'1','filedType':'int'}]&amp;pageMethod=number&amp;currentPage=$2&amp;needQueryByAddress=noNeed</to> 
+   </rule>
+
+   <rule>  
+        <from>/ask/questionList_IsEnd(.*)-bigQT(.*)-qt(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_question\.do?method=findQues&amp;queryArgs=[{'key':'isEnd','value':'$1','filedType':'int'},{'key':'questionTypeBigId','value':'$2','filedType':'int'},{'key':'questionTypeId','value':'$3','filedType':'int'},{'key':'status','value':'1','filedType':'int'}]&amp;pageMethod=number&amp;currentPage=$4&amp;needQueryByAddress=noNeed</to>
+   </rule>
+   <!-- 前台问答系统结束 -->
+   
+   
+    
+ 	<!-- 前台案例系统开始 -->
+ 	<rule>  
+        <from>(.*)/caseList-pager-([0-9]+).html</from>  
+       <to type="forward">/f_caseAlbum\.do?method=findCases&amp;addressStr=$1&amp;queryArgs=[{'key':'caType.id|caType_id','value':'10','filedType':'int'},{'key':'fm','value':'default.jpg','operators':'!='}]&amp;pageMethod=number&amp;currentPage=$2</to> 
+    </rule>
+ 	<rule>  
+        <from>(.*)/caseList-(.*)-([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_caseAlbum\.do?method=findCases&amp;addressStr=$1&amp;queryArgs=[{'key':'$2','value':'$3','filedType':'int'},{'key':'caType.id|caType_id','value':'10','filedType':'int'},{'key':'fm','value':'default.jpg','operators':'!='}]&amp;pageMethod=number&amp;currentPage=$4</to>
+    </rule>
+    <rule>  
+        <from>(.*)/xiaoguotu-kj(.*)-jb(.*)-fgB(.*)-hx(.*)-pr(.*)-tht(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_caseAlbum\.do?method=findCaseImages&amp;addressStr=$1&amp;queryArgs=[{'key':'kongjianTypeId','value':'$2','filedType':'int'},{'key':'jubuTypeId','value':'$3','filedType':'int'},{'key':'fenggeTypeIdBig','value':'$4','filedType':'int'},{'key':'huxingTypeIdBig','value':'$5','filedType':'int'},{'key':'priceInterval','value':'$6','filedType':'int'},{'key':'houseTypeId','value':'$7','filedType':'int'},{'key':'caTypeId','value':'10','filedType':'int'}]&amp;pageMethod=number&amp;currentPage=$8&amp;needQueryByAddress=noNeed</to>
+    </rule>
+	<!-- 前台案例系统结束 -->
+   
+      
+	<rule>  
+        <from>/toOrder.html</from>  
+       <to type="forward">/f_cart\.do?method=toOrder</to> 
+   </rule>
+         
+	<rule>  
+        <from>/toOrder-sma([0-9]+).html</from>  
+       <to type="forward">/f_cart\.do?method=toOrder&amp;myAddressId=$1</to> 
+   </rule>
+   	<rule>  
+        <from>/orderToZf-([0-9]+).html</from>  
+       <to type="forward">/f_order\.do?method=toFukuan&amp;id=$1</to> 
+   </rule>
+   
+   
+   
+   <rule>  
+        <from>(.*)/shopList-pager-([0-9]+).html</from>  
+       <to type="forward">/f_shop\.do?method=findShops&amp;addressStr=$1&amp;queryArgs=[{'key':'status','value':'1','filedType':'int'}]&amp;orderBy=[{'field':'baozhengjin','ad':'desc'}]&amp;pageMethod=number&amp;currentPage=$2</to>
+   </rule>
+   <rule>  
+        <from>(.*)/shopSearch-bzj(.*)-fwqy(.*)-tht(.*)-fg(.*)-order(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_shop\.do?method=findShops&amp;addressStr=$1&amp;queryArgs=[{'key':'baozhengjin','value':'$2','filedType':'int','operators':'!='},{'key':'fuwuquyu','value':'$3,','operators':'like'},{'key':'houseTypeIds','value':'$4,','operators':'like'},{'key':'fenggeTypeIds','value':'$5,','operators':'like'},{'key':'status','value':'1','filedType':'int'}]&amp;orderBy=[{'field':'$6','ad':'desc'}]&amp;pageMethod=number&amp;currentPage=$7</to>
+   </rule>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+	<!-- 验证码 -->
+    <rule>  
+        <from>/yz([0-9]+).gif</from>  
+        <to type="forward">/servlet/createYzm</to>  
+    </rule>
+   <rule>  
+        <from>/fg_yz([0-9]+).gif</from>  
+        <to type="forward">/servlet/createYzmFg</to>  
+    </rule>
+
+
+   <!-- 新闻 -->
+   <rule>  
+        <from>/baike/(.*)/news([0-9]+).html</from>  
+       <to type="forward">/f_news\.do?method=findNewsById&amp;newsTypeUrl=$1&amp;id=$2</to>
+   </rule>
+   <rule>  
+        <from>/baike/(.*)/list([0-9]+)-pager-([0-9]).html</from>  
+       <to type="forward">/f_news\.do?method=findNews&amp;newsTypeUrl=$1&amp;queryArgs=[{'key':'newsType|newsType_id','value':'$2','operators':'tree','operatorsIsTree_Table':'newsType','filedType':'int'},{'key':'status','value':'1','filedType':'int'}]&amp;orderBy=[{'field':'id','ad':'desc'}]&amp;entityList=newsList&amp;forwardPage=newsList&amp;pageMethod=number&amp;currentPage=$3</to>
+   </rule>
+   <rule>  
+        <from>/baike/(.*)/$</from>  
+       <to type="forward">/f_news\.do?method=findTypeIndex&amp;newsTypeUrl=$1</to> 
+   </rule>
+    <rule>  
+        <from>/baike/$</from>  
+       <to type="forward">/f_news\.do?method=findNIndex</to> 
+   </rule>
+   <!-- 新闻 -->
+
+   
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<rule>  
+        <from >(.*)/shop/([0-9]+)/sjs-([0-9]+).html</from>  
+       	<to type="forward">/f_shejishi\.do?method=findSjsById&amp;addressStr=$1&amp;shopId=$2&amp;id=$3&amp;needQueryByAddress=noNeed</to>
+   </rule>
+	<rule>  
+        <from >(.*)/shop/([0-9]+)/sjsList-type(.*)-pager-([0-9]+).html</from>  
+       	<to type="forward">/f_shejishi\.do?method=findSjs&amp;addressStr=$1&amp;queryArgs=[{'key':'shopId','value':'$2','filedType':'int'},{'key':'shejishiGangweiId','value':'$3','filedType':'int'}]&amp;pageMethod=number&amp;currentPage=$4&amp;needQueryByAddress=noNeed</to>
+   </rule>
+   	<rule>  
+        <from>(.*)/shop/([0-9]+)/shopChengxin.html</from>  
+       <to type="forward">/f_shop\.do?method=findChengxin&amp;addressStr=$1&amp;id=$2&amp;needQueryByAddress=noNeed</to> 
+   </rule>
+	<rule>  
+        <from>(.*)/shop/([0-9]+)/shopContent.html</from>  
+       <to type="forward">/f_shop\.do?method=findInfo&amp;addressStr=$1&amp;id=$2&amp;needQueryByAddress=noNeed</to> 
+   </rule>
+	<rule>  
+        <from>(.*)/shop/([0-9]+)/$</from>  
+       <to type="forward">/f_shop\.do?method=index&amp;addressStr=$1&amp;id=$2</to> 
+   </rule>
+   	<rule>  
+        <from >(.*)/shop/([0-9]+)/gongdiList-pager-([0-9]+).html</from>  
+       	<to type="forward">/f_gongdi\.do?method=findGongdis&amp;addressStr=$1&amp;queryArgs=[{'key':'shopId','value':'$2','filedType':'int'},{'key':'status','value':'1','filedType':'int'}]&amp;pageMethod=number&amp;currentPage=$3&amp;needQueryByAddress=noNeed</to>
+   </rule>
+   <rule>  
+        <from >(.*)/shop/([0-9]+)/gongdiList-ing-pager-([0-9]+).html</from>  
+       	<to type="forward">/f_gongdi\.do?method=findGongdis&amp;addressStr=$1&amp;queryArgs=[{'key':'shopId','value':'$2','filedType':'int'},{'key':'jindu','value':'5','filedType':'int','operators':'!='},{'key':'status','value':'1','filedType':'int'}]&amp;pageMethod=number&amp;currentPage=$3&amp;needQueryByAddress=noNeed</to>
+   </rule>
+   <rule>  
+        <from >(.*)/shop/([0-9]+)/gongdiList-suc-pager-([0-9]+).html</from>  
+       	<to type="forward">/f_gongdi\.do?method=findGongdis&amp;addressStr=$1&amp;queryArgs=[{'key':'shopId','value':'$2','filedType':'int'},{'key':'jindu','value':'5','filedType':'int'},{'key':'status','value':'1','filedType':'int'}]&amp;pageMethod=number&amp;currentPage=$3&amp;needQueryByAddress=noNeed</to>
+   </rule>
+   <rule>  
+        <from >(.*)/shop/([0-9]+)/gongdiList-zxb-pager-([0-9]+).html</from>  
+       	<to type="forward">/f_gongdi\.do?method=findGongdis&amp;addressStr=$1&amp;queryArgs=[{'key':'shopId','value':'$2','filedType':'int'},{'key':'taskToShopId','value':'0','filedType':'int','operators':'!='},{'key':'status','value':'1','filedType':'int'}]&amp;pageMethod=number&amp;currentPage=$3&amp;needQueryByAddress=noNeed</to>
+   </rule>
+   <rule>  
+        <from >(.*)/shop/([0-9]+)/gongdi-([0-9]+).html</from>  
+       	<to type="forward">/f_gongdi\.do?method=findGongdiById&amp;addressStr=$1&amp;shopId=$2&amp;id=$3</to>
+   </rule>
+   
+   
+   
+   
+   
+   
+   
+   <rule>  
+        <from>/shop/([0-9]+)/shopCommentList-pager-([0-9]+).html</from>  
+       <to type="forward">/f_shop\.do?method=shopDianpings&amp;id=$1&amp;pageMethod=number&amp;currentPage=$2</to> 
+   </rule>
+	
+	<rule>  
+        <from>/shops_(.*)_(.*)-pager-([0-9]+)(.*).html</from>  
+       <to type="forward">/f_shop\.do?method=findShops&amp;queryArgs=$1&amp;orderBy=$2&amp;returnListSize=20&amp;forwardPage=shopList&amp;pageMethod=number&amp;currentPage=$3&amp;alertMap=$4</to>
+   </rule>
+	
+	<rule>  
+        <from>/shopTop-address([0-9]+).html</from>  
+       <to type="forward">/f_shop\.do?method=shopOrderTop&amp;addressId=$1</to> 
+   </rule>
+
+	
+	
+	
+	
+	<!-- ========================================myFrame.web=================================================== -->
+	<rule>  
+        <from>/zh/jobs-pager-([0-9]+).html</from>  
+       <to type="forward">/f_job\.do?method=findAllJobs&amp;pageMethod=number&amp;currentPage=$1</to> 
+    </rule>
+	<rule>  
+        <from>/zh/job([0-9]+).html</from>  
+       <to type="forward">/f_job\.do?method=findJobById&amp;id=$1</to> 
+    </rule>
+	<rule>  
+        <from>/zh/2jobApp([0-9]+).html</from>  
+       <to type="forward">/f_job\.do?method=beforeAddJobApp&amp;id=$1</to> 
+    </rule>
+	<rule>  
+        <from>/2download([0-9]+).html</from>  
+       <to type="forward">/f_download\.do?method=dl&amp;id=$1&amp;mustLogin=0&amp;onLineOrDown=2</to> 
+    </rule>
+    <rule>  
+        <from>/allDownloads.html</from>  
+       <to type="forward">/f_download\.do?method=findAllDls</to> 
+    </rule>
+    
+   	<rule>  
+        <from>/letter.html</from>  
+       <to type="forward">/renda/letter.jsp</to> 
+    </rule>
+    <rule>  
+        <from>/allZizhis.html</from>  
+       <to type="forward">/f_zizhi\.do?method=findAllZizhis&amp;pageMethod=number&amp;currentPage=1</to> 
+    </rule>
+    <rule>  
+        <from>/allZizhis-pager-([0-9]+).html</from>  
+       <to type="forward">/f_zizhi\.do?method=findAllZizhis&amp;pageMethod=number&amp;currentPage=$1</to> 
+    </rule>
+    <rule>  
+        <from>/zizhi([0-9]+).html</from>  
+       <to type="forward">/f_zizhi\.do?method=findZizhiById&amp;id=$1</to> 
+    </rule>
+    <rule>  
+        <from>/askQues.html</from>  
+       <to type="forward">/f_askQues\.do?method=findAllAQs</to> 
+    </rule>
+    <rule>  
+        <from>/videos.html</from>  
+       <to type="forward">/f_video\.do?method=findAll&amp;isPage=false&amp;content=yes&amp;forwardPage=videoList</to> 
+    </rule>
+   <!-- ========================================产品模块=================================================== -->
+   <rule>  
+        <from>/products_(.*)_(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_product\.do?method=findProducts&amp;queryArgs=$1&amp;orderBy=$2&amp;entityList=productList&amp;forwardPage=sproductList&amp;pageMethod=number&amp;currentPage=$3</to>
+   </rule>
+   <rule>  
+        <from>/(.*)/products-MinType-([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_product\.do?method=findProducts&amp;queryArgs=[{'key':'address.id|address_id','value':'$1','filedType':'varchar','operators':'address'},{'key':'status','value':'1'},{'key':'proType.id|productType_id','value':$2}]&amp;orderBy=[{'field':'id','ad':'desc'}]&amp;entityList=productList&amp;forwardPage=sproductList&amp;pageMethod=number&amp;currentPage=$3</to>
+   </rule>
+   <rule>  
+        <from>/products-MinType-([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_product\.do?method=findProducts&amp;queryArgs=[{'key':'status','value':'1'},{'key':'proType.id|productType_id','value':$1}]&amp;orderBy=[{'field':'id','ad':'desc'}]&amp;entityList=productList&amp;forwardPage=sproductList&amp;pageMethod=number&amp;currentPage=$2</to>
+   </rule>
+   <rule>  
+        <from>/(.*)/products-MidType-([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_product\.do?method=findProducts&amp;queryArgs=[{'key':'address.id|address_id','value':'$1','filedType':'varchar','operators':'address'},{'key':'status','value':'1'},{'key':'proTypeTree','value':'[$2]','operators':'like'}]&amp;orderBy=[{'field':'id','ad':'desc'}]&amp;entityList=productList&amp;forwardPage=sproductList&amp;pageMethod=number&amp;currentPage=$3</to>
+   </rule>
+   <rule>  
+        <from>/products-MidType-([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_product\.do?method=findProducts&amp;queryArgs=[{'key':'status','value':'1'},{'key':'proTypeTree','value':'[$1]','operators':'like'}]&amp;orderBy=[{'field':'id','ad':'desc'}]&amp;entityList=productList&amp;forwardPage=sproductList&amp;pageMethod=number&amp;currentPage=$2</to>
+   </rule>
+   <rule>  
+        <from>/(.*)/products-BigType-([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_product\.do?method=findProducts&amp;queryArgs=[{'key':'address.id|address_id','value':'$1','filedType':'varchar','operators':'address'},{'key':'status','value':'1'},{'key':'proTypeROOTId','value':$2}]&amp;orderBy=[{'field':'id','ad':'desc'}]&amp;entityList=productList&amp;forwardPage=sproductList&amp;pageMethod=number&amp;currentPage=$3</to>
+   </rule>
+   <rule>  
+        <from>/products-BigType-([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_product\.do?method=findProducts&amp;queryArgs=[{'key':'status','value':'1'},{'key':'proTypeROOTId','value':$1}]&amp;orderBy=[{'field':'id','ad':'desc'}]&amp;entityList=productList&amp;forwardPage=sproductList&amp;pageMethod=number&amp;currentPage=$2</to>
+   </rule>
+
+   
+   <rule>  
+        <from>/shop/([0-9]+)/shopSearchProducts_(.*)_(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_product\.do?method=findProducts&amp;shopId=$1&amp;queryArgs=$2&amp;orderBy=$3&amp;entityList=productList&amp;forwardPage=productList&amp;pageMethod=number&amp;currentPage=$4</to>
+   </rule>
+   
+   
+    <rule>  
+        <from>/shop/([0-9]+)/product([0-9]+).html</from>  
+       <to type="forward">/f_product\.do?method=findProductById&amp;shopId=$1&amp;id=$2</to> 
+   </rule>
+
+
+   <rule>  
+        <from>/shop/([0-9]+)/allProducts-pager-([0-9]+).html</from>  
+       <to type="forward">/f_product\.do?method=findProducts&amp;shopId=$1&amp;queryArgs=[{'key':'status','value':'1'},{'key':'shopId','value':$1}]&amp;orderBy=[{'field':'id','ad':'desc'}]&amp;entityList=productList&amp;forwardPage=productList&amp;pageMethod=number&amp;currentPage=$2</to>
+   </rule>
+  	<rule>  
+        <from>(.*)/shop/([0-9]+)/caseList-gd(.*)-fgB(.*)-price(.*)-tht(.*)-lp(.*)-pager-([0-9]+).html$</from>  
+       <to type="forward">/f_caseAlbum\.do?method=findCases&amp;addressStr=$1&amp;queryArgs=[{'key':'shopId','value':'$2','filedType':'int'},{'key':'gongdiId','value':'$3','filedType':'int'},{'key':'fenggeTypeIdBig','value':'$4','filedType':'int'},{'key':'priceInterval','value':'$5','filedType':'int'},{'key':'houseTypeId','value':'$6','filedType':'int'},{'key':'loupanId','value':'$7','filedType':'int'}]&amp;pageMethod=number&amp;currentPage=$8&amp;needQueryByAddress=noNeed&amp;forwardPage=shopCaseList</to> 
+   </rule>
+  	<rule>  
+        <from>(.*)/shop/([0-9]+)/albums([0-9]+).html</from>  
+       <to type="forward">/f_caseAlbum\.do?method=findAlbumByIdFG&amp;addressStr=$1&amp;shopId=$2&amp;id=$3</to> 
+   </rule>
+    <rule>  
+        <from>(.*)/shop/([0-9]+)/shopAlbums([0-9]+).html</from>  
+       <to type="forward">/f_caseAlbum\.do?method=findAlbumById&amp;addressStr=$1&amp;shopId=$2&amp;id=$3</to> 
+   </rule>
+  	<rule>  
+        <from>(.*)/shop/([0-9]+)/news-pager-([0-9]+).html$</from>  
+       <to type="forward">/f_news\.do?method=findShopNews&amp;addressStr=$1&amp;shopId=$2&amp;pageMethod=number&amp;currentPage=$3</to> 
+   </rule>
+
+
+
+
+
+
+
+
+
+
+
+
+   <rule>  
+        <from>/myShop/([0-9]+)/logout.html</from>  
+       <to type="forward">/su_shopUser\.do?method=logout&amp;shopId=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/shopTemplateSimple.html</from>  
+       <to type="forward">/su_shopTemplateSimple\.do?method=findByShop&amp;shopId=$1&amp;forwardPage=shopTemplateSimple1</to> 
+   </rule>
+    <rule>  
+        <from>/myShop/([0-9]+)/shopTemplateSimple-focus.html</from>  
+       <to type="forward">/su_shopTemplateSimple\.do?method=findByShop&amp;shopId=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/orderShopList_(.*)_(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/su_order\.do?method=findOrderShopOrderItems&amp;shopId=$1&amp;queryArgs=$2&amp;orderBy=$3&amp;entityList=orderShopList&amp;forwardPage=orderList&amp;pageMethod=number&amp;currentPage=$4</to>
+   </rule>
+ 	<rule>  
+        <from>/myShop/([0-9]+)/shopOrderIngList-pager-([0-9]+).html</from>  
+       <to type="forward">/su_order\.do?method=findOrderShopOrderItems&amp;shopId=$1&amp;queryArgs=[{'key':'shopId','value':'$1','filedType':'int'},{'key':'status','value':'1,2,3','operators':'in','filedType':'int'},{'key':'isFirstNAPStatus','value':'1','filedType':'int'}]&amp;orderBy=[{'field':'userNeedDate','ad':'desc'}]&amp;entityList=orderShopList&amp;forwardPage=orderIngList&amp;pageMethod=number&amp;currentPage=$2</to>
+   </rule>
+   
+  	<rule>  
+        <from>/myShop/([0-9]+)/hoLogins-pager-([0-9]+).html</from>  
+       <to type="forward">/abstractAction\.do?method=findEntitys_new&amp;tableName=historyoperation&amp;entityName=myFrame.history.entity.HistoryOperation&amp;isPage=yes&amp;entityList=historyOperationList&amp;forwardPage=shopBg_hoList&amp;queryArgs=[{'key':'operationType','value':'login'},{'key':'roleType','value':'myFrame.shop.entity.Shop'},{'key':'operatorId','value':$1,'filedType':'int'}]&amp;pageMethod=number&amp;currentPage=$2</to>
+   </rule>
+  	<rule>  
+        <from>/myShop/([0-9]+)/allAlbums.html</from>  
+       <to type="forward">/su_caseAlbum\.do?method=findAlbumsByType&amp;shopId=$1&amp;bigOrSmallType=small&amp;caTypeId=10</to> 
+   </rule>
+  	<rule>  
+        <from>/myShop/([0-9]+)/beforeAddNews.html</from>  
+       <to type="forward">/sb_news\.do?method=beforeAddNews&amp;shopId=$1</to> 
+   </rule>
+   
+  	<rule>  
+        <from>/myShop/([0-9]+)/productList_delete.html</from>  
+       <to type="forward">/su_product\.do?method=findProducts&amp;queryArgs=[{'key':'status','value':'-1'},{'key':'shopId','value':$1}]&amp;entityList=productList&amp;forwardPage=productList</to> 
+   </rule>
+  	<rule>  
+        <from>/myShop/([0-9]+)/productList_ck.html</from>  
+       <to type="forward">/su_product\.do?method=findProducts&amp;queryArgs=[{'key':'status','value':'0'},{'key':'shopId','value':$1}]&amp;entityList=productList&amp;forwardPage=productList_ck</to> 
+   </rule>
+  	<rule>  
+        <from>/myShop/([0-9]+)/productList_sj.html</from>  
+       <to type="forward">/su_product\.do?method=findProducts&amp;queryArgs=[{'key':'status','value':'1'},{'key':'shopId','value':$1}]&amp;entityList=productList&amp;forwardPage=productList_sj</to> 
+   </rule>
+
+  	<rule>  
+        <from>/myShop/([0-9]+)/product-([0-9]+).html</from>  
+       <to type="forward">/su_product\.do?method=findProductById&amp;shopId=$1&amp;id=$2</to> 
+   </rule>
+
+  	<rule>  
+        <from>/myShop/([0-9]+)/shopImages-([0-9]+).html</from>  
+       <to type="forward">/su_shopImage\.do?method=findShopImagesByShopId_type&amp;shopId=$1&amp;typeName=$2</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/shopImages-cy.html</from>  
+       <to type="forward">/su_shopImage\.do?method=findShopImagesByShopId_cy&amp;shopId=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/allShopImages.html</from>  
+       <to type="forward">/su_shopImage\.do?method=findShopImagesByShopId&amp;shopId=$1</to> 
+   </rule>
+
+   <rule>  
+        <from>/shopLogin.html</from>  
+       <to type="forward">/su_shopUser\.do?method=toLoginJsp</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/newsList.html</from>  
+       <to type="forward">/sb_news\.do?method=findAllNews&amp;shopId=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/jifenList.html</from>  
+       <to type="forward">/sb_integration\.do?method=findInteByWhoId&amp;whoId=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/baseInfoSet.html</from>  
+       <to type="forward">/su_shop\.do?method=base_info_set&amp;id=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/shopContent.html</from>  
+       <to type="forward">/su_shop\.do?method=findShopContent&amp;id=$1</to> 
+   </rule>
+   
+  <rule>  
+        <from>/myShop/([0-9]+)/zx.html</from>  
+       <to type="forward">/su_shop\.do?method=findTemplate&amp;id=$1</to> 
+   </rule>
+     <rule>  
+        <from>/myShop/([0-9]+)/pts.html</from>  
+       <to type="forward">/su_shop\.do?method=findShopProTypes&amp;id=$1</to> 
+   </rule>
+   
+   <rule>  
+        <from>/myShop/([0-9]+)/addProduct_step1.html</from>  
+       <to type="forward">/su_shop\.do?method=toAddProduct&amp;id=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/addProduct_step2.html</from>  
+       <to type="forward">/su_product\.do?method=beforeAddProduct&amp;shopId=$1</to> 
+   </rule>
+   
+   
+    <rule>  
+        <from>/myShop/([0-9]+)/shopProductSet.html</from>  
+       <to type="forward">/su_shopProductSet\.do?method=findByShopId&amp;shopId=$1</to> 
+   </rule>
+	<rule>  
+        <from>/myShop/([0-9]+)/shopCommentList_(.*)_(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/su_shopComment\.do?method=findSCs&amp;shopId=$1&amp;queryArgs=$2&amp;orderBy=$3&amp;entityList=shopCommentList&amp;forwardPage=shopShopCommentList&amp;pageMethod=number&amp;currentPage=$4</to>
+   </rule>
+      
+   <rule>  
+        <from>/myShop/([0-9]+)/accountIndex.html</from>  
+       <to type="forward">/su_account\.do?method=findAccountById_withItems&amp;shopId=$1</to> 
+   </rule>
+	<rule>  
+        <from>/myShop/([0-9]+)/accItemList_(.*)_-pager-([0-9]+).html</from>  
+       <to type="forward">/su_account\.do?method=findAccountItems&amp;shopId=$1&amp;queryArgs=$2&amp;orderBy=[{'field':'id','ad':'desc'}]&amp;entityList=accountItemList&amp;forwardPage=accountItemList&amp;pageMethod=number&amp;currentPage=$3</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/accountCz.html</from>  
+       <to type="forward">/su_account\.do?method=toChongzhi&amp;shopId=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/accountItem-([0-9]+).html</from>  
+       <to type="forward">/su_account\.do?method=findAccountItemById&amp;shopId=$1&amp;item_id=$2</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/pollTaskSet.html</from>  
+       <to type="forward">/su_pollTaskSet\.do?method=findMyPollTaskSetList&amp;shopId=$1</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/pollTaskDay.html</from>  
+       <to type="forward">/su_pollTaskSet\.do?method=toPollTaskDay&amp;shopId=$1</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/pollTaskList_(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/su_task\.do?method=findTaskToShops&amp;queryArgs=$2</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/gongshang.html</from>  
+       <to type="forward">/su_gongshang\.do?method=findGongshangByShopId&amp;shopId=$1</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/zizhiList.html</from>  
+       <to type="forward">/su_zizhi\.do?method=findAllZizhis&amp;shopId=$1</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/zizhiAdd.html</from>  
+       <to type="forward">/su_zizhi\.do?method=beforeAdd&amp;shopId=$1</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/shejishiAdd.html</from>  
+       <to type="forward">/su_shejishi\.do?method=toAdd&amp;shopId=$1</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/shejishiList.html</from>  
+       <to type="forward">/su_shejishi\.do?method=findSjsByShop&amp;shopId=$1</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/gongdiAdd.html</from>  
+       <to type="forward">/su_gongdi\.do?method=toAdd&amp;shopId=$1</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/gongdiMod([0-9]+).html</from>  
+       <to type="forward">/su_gongdi\.do?method=toMod&amp;shopId=$1&amp;id=$2</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/gongdiList.html</from>  
+       <to type="forward">/su_gongdi\.do?method=findGongdisByShop&amp;shopId=$1</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/gongdi([0-9]+).html</from>  
+       <to type="forward">/su_gongdi\.do?method=findGongdiById&amp;shopId=$1&amp;id=$2</to>
+   </rule>
+    <rule>  
+        <from>/myShop/([0-9]+)/addCaseAlbum.html</from>  
+       <to type="forward">/su_caseAlbum\.do?method=toAddCaseAlbum&amp;shopId=$1</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/advertingList-qiang.html</from>  
+       <to type="forward">/su_advertising\.do?method=findAllAdvList&amp;shopId=$1</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/findAdving-([0-9]+)-addAdvertiment.html</from>  
+       <to type="forward">/su_advertising\.do?method=findAdving2AddAm&amp;shopId=$1&amp;id=$2</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/myAdvers-status([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/su_advertisement\.do?method=findMyAdverments&amp;shopId=$1&amp;status=$2&amp;pageMethod=number&amp;currentPage=$3</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/questioinList_(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/su_question\.do?method=findQues&amp;shopId=$1&amp;queryArgs=$2&amp;pageMethod=number&amp;currentPage=$3&amp;needQueryByAddress=noNeed</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/myQuestioinList_status([0-9]+)_isSelected([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/su_question\.do?method=findQuesByAnswer&amp;shopId=$1&amp;status=$2&amp;isSelected=$3&amp;pageMethod=number&amp;currentPage=$4</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/question([0-9]+).html</from>  
+       <to type="forward">/su_question\.do?method=findQuestionById&amp;shopId=$1&amp;id=$2</to>
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/yuyueList.html</from>  
+       <to type="forward">/su_yuyue\.do?method=findYys&amp;shopId=$1&amp;queryArgs=[{'key':'shopId','value':'$1','filedType':'int'},{'key':'status','value':'1','filedType':'int'}]</to> 
+   </rule>
+   <rule>  
+        <from>/myShop/([0-9]+)/</from>  
+       <to type="forward">/su_shop\.do?method=index&amp;id=$1</to> 
+   </rule>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <rule>  
+        <from>/userLogin.html</from>  
+       <to type="forward">/uf_user\.do?method=toLoginJsp</to> 
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/$</from>  
+       <to type="forward">/uf_user\.do?method=login_index&amp;id=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/logout.html</from>  
+       <to type="forward">/uf_user\.do?method=logout&amp;id=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/questionList-status([0-9]+)-isEnd([0-9]+)-pager-([0-9]+).html</from>  
+       <to type="forward">/uf_question\.do?method=findQuestions&amp;userId=$1&amp;status=$2&amp;isEnd=$3&amp;pageMethod=number&amp;currentPage=$4</to>
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/questionList-del-pager-([0-9]+).html</from>  
+       <to type="forward">/uf_question\.do?method=findQuestions&amp;userId=$1&amp;status=-1&amp;pageMethod=number&amp;currentPage=$2</to>
+   </rule>
+    <rule>  
+        <from>/myUser/([0-9]+)/myQuestion([0-9]+).html</from>  
+       <to type="forward">/uf_question\.do?method=findQuestionById&amp;userId=$1&amp;id=$2</to>
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/questionAdd.html</from>  
+       <to type="forward">/uf_question\.do?method=toAdd&amp;userId=$1</to>
+   </rule>
+   
+   <rule>  
+        <from>/myUser/([0-9]+)/jifenList.html</from>  
+       <to type="forward">/uf_integration\.do?method=findInteByWhoId&amp;whoId=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/modifyInfo.html</from>  
+       <to type="forward">/uf_user\.do?method=toModify&amp;id=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/orderShopList_(.*)_(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/uf_order\.do?method=findOrderShopOrderItems&amp;userId=$1&amp;queryArgs=$2&amp;orderBy=$3&amp;entityList=orderShopList&amp;forwardPage=orderList&amp;pageMethod=number&amp;currentPage=$4</to>
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/orderList_(.*)_(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/uf_order\.do?method=findOrders&amp;userId=$1&amp;queryArgs=$2&amp;orderBy=$3&amp;entityList=orderList&amp;forwardPage=orderList&amp;pageMethod=number&amp;currentPage=$4</to>
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/sc_caseList-pager-([0-9]+).html</from>  
+       <to type="forward">/uf_shoucang\.do?method=findScs&amp;forwardPage=sc_productList&amp;scTable=zhuangxiu_caseAlbum&amp;userId=$1&amp;pageMethod=number&amp;currentPage=$2</to> 
+   </rule>
+    <rule>  
+        <from>/myUser/([0-9]+)/sc_shopList-pager-([0-9]+).html</from>  
+       <to type="forward">/uf_shoucang\.do?method=findScs&amp;forwardPage=sc_shopList&amp;scTable=shop&amp;userId=$1&amp;pageMethod=number&amp;currentPage=$2</to> 
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/myAddress-pager-([0-9]+).html</from>  
+       <to type="forward">/uf_myAddress\.do?method=find&amp;userId=$1&amp;pageMethod=number&amp;currentPage=$2</to> 
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/addAddress.html</from>  
+       <to type="forward">/uf_myAddress\.do?method=toAddMyAddress&amp;userId=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/shopCommentList_(.*)_(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/uf_shopComment\.do?method=findSCs&amp;userId=$1&amp;queryArgs=$2&amp;orderBy=$3&amp;entityList=shopCommentList&amp;forwardPage=userShopCommentList&amp;pageMethod=number&amp;currentPage=$4</to>
+   </rule>
+      <rule>  
+        <from>/myUser/([0-9]+)/accountIndex.html</from>  
+       <to type="forward">/uf_account\.do?method=findAccountById_withItems&amp;userId=$1</to> 
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/accItemList_(.*)_-pager-([0-9]+).html</from>  
+       <to type="forward">/uf_account\.do?method=findAccountItems&amp;userId=$1&amp;queryArgs=$2&amp;orderBy=[{'field':'id','ad':'desc'}]&amp;entityList=accountItemList&amp;forwardPage=accountItemList&amp;pageMethod=number&amp;currentPage=$3</to>
+   </rule>
+   
+   <rule>  
+        <from>/myUser/([0-9]+)/accountItem-([0-9]+).html</from>  
+       <to type="forward">/uf_account\.do?method=findAccountItemById&amp;userId=$1&amp;item_id=$2</to> 
+   </rule>
+   
+ 	<rule>  
+        <from>/myUser/([0-9]+)/accountCards_(.*)_(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/uf_card\.do?method=findAllCards&amp;userId=$1&amp;queryArgs=$2&amp;orderBy=$3&amp;entityList=cardList&amp;forwardPage=cardList&amp;pageMethod=number&amp;currentPage=$4</to>
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/account-pwdMod.html</from>  
+       <to type="forward">/uf_account\.do?method=toModZfPwd&amp;userId=$1</to>
+   </rule>
+
+   <rule>  
+        <from>/myUser/([0-9]+)/taskAdd.html</from>  
+       <to type="forward">/abstractAction\.do?method=simple2page&amp;userId=$1&amp;role=user&amp;forwardPage=user/taskAdd.jsp</to>
+   </rule>
+   <rule>  
+        <from>/myUser/([0-9]+)/myTaskList-pager-([0-1]+).html</from>  
+       <to type="forward">/uf_task\.do?method=findTasks&amp;queryArgs=[{'key':'userId','value':'$1','filedType':'int'},{'key':'fenpeiStatus','value':'-2','filedType':'int','operators':'!='}]&amp;returnListSize=6&amp;isPage=true&amp;pageMethod=number&amp;currentPage=$2</to>
+   </rule>
+   
+   <rule>  
+        <from>/myUser/([0-9]+)/myTaskId-([0-9]+).html</from>  
+       <to type="forward">/uf_task\.do?method=findTaskById&amp;userId=$1&amp;id=$2</to>
+   </rule>
+   
+   <rule>  
+        <from>/myUser/([0-9]+)/yuyueList.html</from>  
+       <to type="forward">/uf_yuyue\.do?method=findYys&amp;userId=$1&amp;queryArgs=[{'key':'userId','value':'$1','filedType':'int'}]</to> 
+   </rule>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   <rule>  
+        <from>/myPsy/([0-9]+)/orderShopList_(.*)_(.*)-pager-([0-9]+).html</from>  
+       <to type="forward">/f_order\.do?method=findOrderShopOrderItems&amp;shopId=$1&amp;queryArgs=$2&amp;orderBy=$3&amp;entityList=orderShopList&amp;forwardPage=orderList_psy&amp;pageMethod=number&amp;currentPage=$4</to>
+   </rule>
+   
+   
+   
+   
+	<rule>  
+        <from>/toPage_([0-9]+)_user_zfbcz.html</from>  
+       <to type="forward">/f_zhifubao\.do?method=toZhifubao_chongzhi&amp;toZFB_type=userZhifubaoChongzhi&amp;aiId=$1</to> 
+   </rule>
+   	<rule>  
+        <from>/toPage_([0-9]+)_shop_zfbcz.html</from>  
+       <to type="forward">/f_zhifubao\.do?method=toZhifubao_chongzhi&amp;toZFB_type=shopZhifubaoChongzhi&amp;aiId=$1</to> 
+   </rule>
+   
+   
+   	<rule>  
+        <from>/regist.html</from>  
+       <to type="forward">/abstractAction\.do?method=simple2page&amp;forwardPage=regist.jsp</to> 
+   </rule>
+   <rule>  
+        <from>/userLogin.html</from>  
+       <to type="forward">/abstractAction\.do?method=simple2page&amp;forwardPage=login.jsp</to> 
+   </rule>
+</urlrewrite>  

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.sms.init.InitMavenImpl</initMavenClass>
+	<!-- 初始化短信接口 -->
+	
+	<status>open</status>
+	
+	<!-- 远程服务器 -->
+	<serviceURL>http://113.11.210.117:8802/sms.aspx</serviceURL>
+	<!-- userId -->
+	<userId>1353</userId>
+	<!-- 账户 -->
+	<account>aierte</account>
+	<!-- 密码 -->
+	<password>abcd1234</password>
+	<!-- 短信内容后缀 -->
+	<suffix>【爱尔特】</suffix>
+	<!-- 是否记录发送记录 -->
+	<saveRecord>true</saveRecord>
+	
+	
+	<!-- 集成到别的项目中，使用的过程中需要导入生成content的类 -->
+	<myCreateContentUtil>myFrame.sdk.MyCreateContentUtil</myCreateContentUtil>
+	<!-- 发送短信的业务类别名称 -->
+	<requestKeyName-sdkMtType>sdkMtType</requestKeyName-sdkMtType>
+	<requestKeyName-telPhones>telPhones</requestKeyName-telPhones>
+	<requestKeyName-smsOthers>smsOthers</requestKeyName-smsOthers>
+	<requestKeyName-yanzhengma>smsYanzhengma</requestKeyName-yanzhengma>
+	
+	
+	
+	
+	
+	
+</initMaven>

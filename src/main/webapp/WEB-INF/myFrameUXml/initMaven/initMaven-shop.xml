@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.shop.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 初始化admin登录常用的属性，如如果错误指向的页面，如登录成功后需要执行的方法 -->
+	<adminLoginErrorPage>redirect:toShopLogin</adminLoginErrorPage>
+	<!-- 该类方法的实现必须要符合这里定的参数规则，req,cache,aBiz -->
+	<adminAfter className="myFrame.shop.AfterShop">
+	    <method methodKey="afterLogin">afterLogin</method>
+	</adminAfter>
+	
+	
+	<fgShop cacheName="shop_shopInfo"  prefix="/fshop/" >
+	    <cacheKeys dataName="shop" cacheKey="fgshopId_"></cacheKeys>
+	    <cacheKeys dataName="shopTemplate" cacheKey="fgshopTemplateShopId_"></cacheKeys>
+	</fgShop>
+	
+</initMaven>

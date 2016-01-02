@@ -1,0 +1,409 @@
+html{color:#000;overflow-y:scroll;background:#fff;padding:0px;margin:0px;  font-size: 100%;}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,form,th{
+	margin:0;padding:0;font-family:12px/1.5 Microsoft Yahei,tahoma,arial,宋体b8b体;text-align: left;color:#666;  font-size: 100%;}
+body,button,input,select,textarea,a,span,div,p{font-family:12px/1.5 Microsoft Yahei,tahoma,arial,宋体b8b体;text-align: left;color:#666;}
+body, button, input, select, textarea,body,button,input,select,textarea,a,span,div,p,h1,h2,h3,h4,li{color:#666;
+	font: 12px/1.5 Microsoft Yahei,tahoma,arial,宋体b8b体;text-align: left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;text-align: left;color:#666;}
+
+.indexEveryBox{margin-bottom:20px;clear:both;float:left;}
+#shopListBox{padding-bottom:30px;}
+#footerBox{float:left;width:100%;margin-top:20px;border-top:1px solid #ddd;padding-top:10px;}
+#footerBox p{text-align: center;}
+
+
+
+
+/************************专场列表css开始******************************/
+.everySpecial{float:left;height:230px;margin-top:5px;margin-bottom:5px;border:1px solid #ddd;position: relative;top:0px}
+.everySpecial .numBox{position: absolute;top:0px;right: 0px;width:50px;height:50px;background:#7f0019}
+.everySpecial .numBox.wg{background:#008060}
+.everySpecial .numBox p{text-align: center;color:#fff;}
+.everySpecial .numBox p.num{margin-top:5px;font-size:14px;}
+.everySpecial .numBox.mygray{background:#777978}
+.everySpecial .numBox.mygreen{background:#008060;}
+.everySpecial .spresult{position: absolute;bottom:20px;right: 20px;width:121px;height:63px;background:url(../image/apResult2.png) no-repeat;}
+.everySpecial .spresult.bid{}
+.everySpecial .spresult.nobid{}
+.everySpecial_b{padding-top:5px;padding-bottom:5px;}
+.everySpecial_b a:hover{color:#7f0019;text-decoration: underline;}
+.everySpecial_b p{line-height: 24px;padding-left: 10px;}
+.everySpecial_b p.sptitle{border-bottom:1px solid #eee;padding-bottom:5px;}
+.everySpecial_b p.sptitle a{font-size:16px;font-weight: bold;color:#333;}
+.everySpecial_b p.sptime{font-size:16px;font-weight: bold;color:#999;margin-top:5px;}
+
+
+
+@media only screen and (max-width:750px){
+.everySpecial{width:100%;}
+}
+@media only screen and (min-width:750px){
+.everySpecial{width:49.5%;}
+.everySpecial.two{float:right;}
+}
+.everySpecial_t,.everySpecial_b{width:100%;}
+.everySpecial_t{overflow: hidden;height:160px;}
+.everySpecial_t a{width:100%}
+.everySpecial_t img{width:100%;}
+.everySpecial_b{height:70px;}
+/************************专场列表css结束******************************/
+
+/************************拍品列表css开始******************************/
+.everyAP {
+	width: 280px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	float: left;
+	display: block;
+	position: relative;top:0px;
+	left:-10px;
+}
+
+.everyAP a {
+	display: block;
+	float: left;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #dcdcdc;
+	padding-bottom:10px;
+	  background-color: #f6f6f6;
+}
+.everyAP a:hover{text-decoration: none;border:1px solid #7f0019}
+.img-section {
+	height:200px;
+	width: 100%;
+	overflow: hidden;
+	line-height: 100%;
+	background: #f6f6f6;
+	/*非IE的主流浏览器识别的垂直居中的方法*/
+	display: table-cell;
+	vertical-align: middle;
+	/*设置水平居中*/
+	text-align: center;
+	/* 针对IE的Hack */
+	*display: block;
+	*font-family: Arial; /*防止非utf-8引起的hack失效问题，如gbk编码*/
+}
+
+.img-section img {
+	vertical-align:middle; 
+	max-width: 100%;
+	max-height: 100%;
+}
+.info-section {
+  position: relative;
+  padding-top: 10px;
+}
+.info-section p{padding-left:10px;}
+.info-section .title {
+  overflow: hidden;
+  height: 20px;
+  line-height: 20px;
+  color: #1b1b1b;
+  font-size: 14px;
+}
+.info-section .priceP{
+	line-height: 30px;font-size:14px;
+}
+.info-section .time{float:left;}
+.info-section .time{font-size:14px;}
+.info-section .time span{font-size:14px;}
+.priceP b{  color: #800019;}
+
+.chujiaBox{position: absolute;top:0px;right:0px;width:50px;height:50px;background:#7f0019;color: #fff;} 
+.chujiaBox p{color:#fff;width:100%;text-align: center;}
+.chujiaBox p.cccs{font-size:16px;margin-top:5px;}
+.chujiaBox.weiguanBox{background:#008060}
+.chujiaBox.endCJ{background:#777978}
+.chujiaBox.wg{background:#008060}
+
+.apresultBox{position: absolute;bottom:100px;right:20px;width:120px;height:64px;}
+.apresultBox.nobid{background:url(../image/apResult.png) no-repeat;background-position: -0px -64px;}
+.apresultBox.bid{background:url(../image/apResult.png) no-repeat;background-position: -0px -0px;}
+.djsTimeBox.marginl10{top:-3px;}
+
+
+@media only screen and (max-width:750px){
+.everyAP{width:49%;left:0px;margin-left:0px}
+.everyAP.two{float:right;}
+.chujiaBox{width:50px;height:50px;}
+.chujiaBox p{line-height: 20px;}
+.chujiaBox p.cccs{font-size:14px;margin-top:3px;}
+}
+@media only screen and (min-width:750px){
+.everyAP{width:23.98%;}
+}
+
+
+/************************拍品列表css结束******************************/
+
+
+/************************shopList css开始******************************/
+.everyShop{max-height: 250px;float:left;position: relative;margin-left:10px;left:-10px;margin-bottom:10px;}
+a.removeSCA{position: absolute;top:0px;left:0px;width:100%;display:block;float:left;height:30px !important;
+background:#20B2AA !important;text-align: center;line-height: 30px;color:#fff;border:none !important;
+}
+a.removeSCA:hover{border:none !important;}
+.everyShop .everyShop_t{width:100%;height:75%;overflow: hidden;}
+.everyShop .everyShop_t {
+	width: 100%;
+	overflow: hidden;
+	line-height: 100%;
+	background: #f6f6f6;
+	/*非IE的主流浏览器识别的垂直居中的方法*/
+	/**display: table-cell;**/
+	vertical-align: middle;
+	/*设置水平居中*/
+	text-align: center;
+	/* 针对IE的Hack */
+	*display: block;
+	*font-family: Arial; /*防止非utf-8引起的hack失效问题，如gbk编码*/
+}
+
+.everyShop .everyShop_t img {
+	vertical-align:middle; 
+	max-width: 100%;
+	max-height: 100%;
+}
+.everyShop .everyShop_b{
+	width:100%;float:left;
+}
+.everyShop .everyShop_b p{margin-top:5px;margin-left:5px;float:left;clear:both;}
+.everyShop .everyShop_b p.shopName a{font-size:14px;color:#333;}
+.everyShop .everyShop_b p.gzNumBox{}
+.everyShop .everyShop_b p.gzNumBox span{float:left;padding-right:5px;}
+@media only screen and (max-width:750px){
+.everyShop{width:49%;left:0px;margin-left:0px}
+.everyShop.two{float:right;}
+}
+@media only screen and (min-width:750px){
+.everyShop{width:23.98%;}
+}
+
+/************************shopList css结束******************************/
+
+
+
+/************************拍品单页css开始******************************/
+.apTitleBox{width:100%;height:50px;padding-top:20px;float:left;display:block;position: relative;top:0px;}
+.apTitleBox h1{font-size:16px;font-weight: 700;float:left;line-height: 34px;overflow: hidden;height:30px;padding-right:70px;}
+.apbutsBox{height:35px;float:right;position:absolute;top:20px;right:0px;}
+.apbutsBox .mui-content-padded{margin:0px;}
+.apbutsBox ul li{display:block;float:left;width:35px;height:35px;margin:0 auto;}
+.apbutsBox ul li a{display:block;width:30px;height:30px;margin:0 auto;}
+.apbutsBox ul li a.rsBut{background:url(../image/remind.jpg) -0px -31px no-repeat;}
+.apbutsBox ul li a.muiIOC{ margin: 0px;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-clip: padding-box;}
+.apbutsBox ul li a.muiIOC .mui-icon{margin-top:2px;}
+.apbutsBox ul li a.sc{}
+.apbutsBox ul li a.fx .mui-icon{margin-top:3px;}
+
+.apbutsBox ul li a.muiIOC.selected{background:#7f0019;border:1px solid #7f0019;}
+.apbutsBox ul li a.muiIOC.selected span{color:#fff;}
+
+
+.apInfoBox{width:100%;height:auto;border-top:1px solid #ddd;clear:both;float:left;margin-top:10px;padding-top:10px;position: relative;top:0px;}
+.apInfoBox .result{position: absolute;top:10px;right:0px;width:120px;height:67px;background:url(../image/apResult1.png) no-repeat;}
+.apInfoBox .result.nobid{background:url(../image/apResult3.png) no-repeat;}
+
+.apInfoBox_l,.apInfoBox_r{float:left;width:98%;height:100%}
+.apInfoBox_r{float:right !important;}
+.apInfoBox_l table td{font-size:12px;padding:5px;}
+.apInfoBox_r{width:0px;}
+
+.apaiBox{width:100%;height:50px;background:#7f0019;clear:both;float:left;margin-top:10px;}
+.apaiBox_l{float:left;height:100%;width:50%;}
+.apaiBox_r{float:left;height:100%;width:50%;}
+.apaiBox_l input{height:40px;margin:5px;font-size:18px;}
+.apaiBox_r a{display:block;float:right;text-align: center;width:100%;color:#fff;font-size:18px;line-height: 48px;}
+
+
+.apContentBox{width:100%;height:auto;margin-top:20px;float:left;}
+.apExpandBox{width:100%;height:auto;float:left;}
+.apExpandBox ul li{display:block;float:left;height:30px;border:1px solid #ddd;margin-right:10px;margin-bottom:10px;}
+.apExpandBox ul li span{float:left;display:block;padding:5px;padding-left:10px;padding-right:10px;}
+.apExpandBox ul li span.k{background:#F0FFF0 ;}
+
+.productContent{margin-top:20px;float:left;clear:both;}
+.productContent img{width:100%}
+
+.aijpBox{float:left;width:100%;}
+.aijpBox table{width:100%;}
+.aijpBox thead tr td{background:#F0FFF0 }
+.aijpBox table tr td{padding:5px;font-size:13px;}
+
+.apCaseInfoBox{float:left;width:100%;margin-top:20px;}
+.apCaseInfoBox ul li a.mui-navigate-right{color:#333 !important;}
+
+.apTimeBox{width:100%;}
+.apTimeBoxI{padding:10px;margin:0 auto;width:250px;}
+/************************拍品单页css结束******************************/
+
+/************************专场单页css开始******************************/
+.specialImgFmBox{width:100%;max-height:200px;}
+.spInfoBox{width:100%;height:auto;border-top:1px solid #ddd;clear:both;float:left;margin-top:10px;padding-top:10px;
+position: relative;top:0px;
+}
+.spInfoBox .result{position: absolute;top:10px;right:0px;width:120px;height:67px;background:url("../image/apResult2.png") no-repeat;}
+.spInfoBox table td{font-size:12px;padding:5px;}
+.specialSingPageAPListBox{margin-top:20px;  width: 100%;}
+
+.specialInfo{width:100%;height:300px;position: relative;top:0px;}
+/************************专场单页css结束******************************/
+
+#pageBox{text-align: right;}
+
+
+/************************shop单页css开始******************************/
+#shopInfoBox{width:100%;height:220px;background:url("../image/bg_8.png") no-repeat center center;}
+.artist-logo {
+  text-align: center;
+  padding-top: 40px;
+  margin-bottom: 10px;
+}
+.artist-logo-box {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+}
+.artist-logo img {
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+.artist-logo img.no-radius {
+  border-radius: 0px;
+}
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 62.5rem;
+}
+.artist-sname{padding-top:0px;margin:0px;}
+.artist-sname .artist-logo-box{height:30px;width:200px;text-align: center;font-size:18px;font-weight: 700;color:#000;}
+/************************shop单页css结束******************************/
+
+
+
+
+
+
+
+#addRemindBox{height:auto !important;margin:0 auto;overflow: hidden;}
+
+
+
+
+
+
+
+/**************************************************爱尔特合伙人***********************************************/
+/************head开始***************/
+.myaHead{width:100%;height:50px;background:#0191d7;}
+.myaHeadI{width:60%;height:100%;margin:0 auto;}
+.myaHeadI .logo{width:50px;height:40px;background:url(../image/myaHeadLogo.png) no-repeat;display:block;float:left;
+position: relative;top:10px;
+}
+.myaHeadI .title{font-size:16px;color:#fff;float:left;line-height: 50px;}
+/************head结束***************/
+/************everyPro开始***************/
+.everyPro{width:100%;margin-top:20px;background:#fff;height:auto;border:1px solid #d9dbd8;
+position: relative;top:0px;display:block;
+}
+.everyProT,.everyProM,.everyProB{width:100%;}
+.everyProT{height:auto;}
+.everyProM{}
+.everyProB{height:50px;border-top:1px solid #ddd;background:#edf4ec;}
+.proImgBox{/* width:140px;height:140px;margin:0 auto;position: relative;top:30px; */width:100%;height:100%;overflow: hidden;}
+.proImgBox img{width:100%}
+.everyProB_l,.everyProB_r{float:left;width:49.7%;height:100%}
+.everyProB_l{border-right:1px solid #ddd;overflow: hidden;}
+.everyProB_l .pname{font-size:16px;padding:10px;line-height: 30px;color:#000;}
+.everyProBrI{width:90%;margin:0 auto;position: relative;top:5px;}
+.everyProBrI .hhrPP .k{font-size:14px;color:#000;}
+.everyProBrI .hhrPP .v{font-size:14px;color:#e8760b;font-weight: bold;}
+.everyProBrI .wdPP span{color:#999;}
+.everyProBrI .wdPP span.v{text-decoration: line-through;font-weight: bold;}
+.everyPro_alert_price{position: absolute;top:0px;right:0px;width:80px;height:25px;background:#fb430f;}
+.everyPro_alert_price p{line-height: 25px;color:#fff;margin-left:5px;}
+.everyPro_alert_price.sc{right:80px;background:#228B22}
+/************everyPro结束***************/
+
+/*********************myaTabHeadBox开始********************/
+.myaTabHeadBox{width:100%;height:45px;border-bottom:1px solid #ddd;background:#fff;position: fixed;top:0px;left:0px;
+z-index: 99;
+}
+.myaTabHeadBox ul{display:block;float:left;width:100%;}
+.myaTabHeadBox ul li{display:block;float:left;width:50%;height:100%;}
+.myaTabHeadBox ul li a{display:block;float:left;width:100%;height:100%;text-align: center;line-height: 45px;color:#000;
+font-size:16px;font-weight: bold;
+}
+.myaTabHeadBox ul li a.selected{background:#0191d7;color:#fff;}
+
+/*********************myaTabHeadBox结束********************/
+/*********************产品介绍开始********************/
+.proMainBox{width:100%;padding-top:50px;background:#F8F8FF;padding-bottom:0px;}
+.proMainBox h1.ptiname{font-size:20px;color:#333;font-weight: bold;text-align: center;margin-bottom:20px;}
+.proMainBox p{text-align: center;line-height: 25px;}
+.proMainBox p span,.proMainBox p a{font-size:16px;}
+.pm_dszdjp .v{text-decoration: line-through;font-weight: bold;}
+.pm_hhrj span.v{color:#fff;font-weight: bold;font-size:28px;background:#e8760b;padding-left:5px;padding-right:5px;}
+.pm_wsmwm a{color:#fff;text-decoration: underline;background:#0191d7;}
+.pimgBoxp{margin-top:0px;}
+.pimgBoxp img{width:100%;}
+.proConBox img{width:100%}
+.pm_pcount span{background:red;padding:2px;color:#fff;}
+/*********************产品介绍结束********************/
+
+/****************************底部固定开始******************************/
+.fixBot{position: fixed;bottom:0px;left:0px;width:100%;height:50px;background:#0191d7;z-index:99;border-top:1px solid #ddd;}
+.fixBot .fixBotI{width:90%;margin:0 auto;height:100%;}
+.buyBut_l{float:left;width:70%;margin-top:5px;}
+.buyBut_l p{color:#fff;}
+.buyBut_r{float:right;width:30%;}
+.buyButl_img{float:left;width:40px;}
+.buyButl_img img{width:40px;height:40px;}
+.buyButl_info{float:left;margin-left:10px;}
+.buyAButton{display:block;float:left;width:100%;height:100%;background:#e8760b;color:#fff;line-height: 50px;text-align: center;
+font-size:14px;
+}
+.buyAButton:hover{background:red;}
+/****************************底部固定结束******************************/
+
+
+
+/***********************productPrice组合筛选开始****************************/
+.proBox{width:100%;height:70px;padding-bottom:10px;border-bottom:1px solid #ccc;margin-bottom:10px;}
+.proBox_l,.proBox_r{float:left;height:100%;}
+.proBox_l{width:80px;}
+.proBox_l img{width:60px;height:60px;}
+.proBox_r p{}
+.proBox_r p.curPPPriceSpan{color:orange;font-size:16px;}
+.propriceListBox{width:100%;height:auto;}
+.everyPPZH{width:100%;min-height:80px;border-bottom:1px solid #eee;margin-bottom:10px;}
+.everyPPZH-T,.everyPPZH-B{width:100%;}
+.everyPPZH-T{height:25px;}
+.everyPPZH-B ul li{display:block;float:left;min-width:50px;height:30px;border:1px solid #ddd;
+border-radius:5px;margin-right:10px;margin-bottom:10px;padding:5px;text-align: center;
+}
+.everyPPZH-B ul li.selected{border:1px solid orange;color:orange;}
+/***********************productPrice组合筛选结束****************************/
+
+
+
+
+
+

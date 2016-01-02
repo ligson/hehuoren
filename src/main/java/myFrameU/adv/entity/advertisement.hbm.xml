@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.adv.entity">
+	<class name="Advertisement" table="adv_advertisement" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		
+		<many-to-one name="advertising" class="myFrameU.adv.entity.Advertising" column="advertising_id" cascade="none"></many-to-one>
+		<property name="markeNum" column="markeNum" type="string"></property>
+		<property name="addressTreeIds" column="addressTreeIds" type="string"></property>
+		<property name="addressId" column="addressId" type="int"></property>
+		<property name="relDate" column="relDate" type="java.sql.Timestamp"></property>
+		<property name="beginDate" column="beginDate" type="java.sql.Timestamp"></property>
+		<property name="endDate" column="endDate" type="java.sql.Timestamp"></property>
+		<property name="advType" column="advType" type="string"></property>
+		<property name="indexNum" column="indexNum" type="int"></property>
+		<property name="remainTime" column="remainTime" type="int"></property>
+		<property name="picUrl" column="picUrl" type="string"></property>
+		<property name="picSmall" column="picSmall" type="string"></property>
+		<property name="picTitle" column="picTitle" type="string"></property>
+		<property name="picA" column="picA" type="string"></property>
+		<property name="flashUrl" column="flashUrl" type="string"></property>
+		<property name="oldPrice" column="oldPrice" type="float"></property>
+		<property name="price" column="price" type="float"></property>
+		<property name="priceMeiyue" column="priceMeiyue" type="float"></property>
+		<property name="widthAndHeight" column="widthAndHeight" type="string"></property>
+		<property name="isWeb" column="isWeb" type="int"></property>
+		<property name="status" column="status" type="string"></property>
+		<property name="isJiaoqian" column="isJiaoqian" type="int"></property>
+		<property name="shopId" column="shopId" type="int"></property>
+		<property name="shopName" column="shopName" type="string"></property>
+		<property name="advertisingMarkedNum" column="advertisingMarkedNum" type="string"></property>
+				
+		
+		<property name="sonByValue" column="sonByValue" type="string"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.tree.entity">
+	<class name="AbstractTreeEntity" abstract="true">
+		<id name="id" column="id">
+			<generator class="increment">
+			</generator>
+		</id>
+		<property name="name" column="name" type="string"></property>
+		<many-to-one name="parent" class="myFrameU.tree.entity.AbstractTreeEntity" column="parent_id" cascade="none"></many-to-one>
+		<property name="rootTypeId" column="rootTypeId" type="int"></property>
+		<property name="isROOT" column="isROOT" type="int"></property>
+		<property name="isLeaf" column="isLeaf" type="int"></property>
+		<property name="jibie" column="jibie" type="int"></property>
+		<property name="url" column="url" type="string"></property>
+		<property name="treeId" column="treeId" type="string"></property>
+		<property name="allName" column="allName" type="string"></property>
+	</class>
+
+    
+</hibernate-mapping>

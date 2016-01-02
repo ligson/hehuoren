@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化的实体类 -->
+	<initMavenClass>myFrameU.ibatis.init.InitMavenImpl</initMavenClass>
+	
+	
+	<!-- 初始化ibatisXML配置文件在哪 -->
+	<ibatisXMLPath>ibatis.xml</ibatisXMLPath>
+	    
+</initMaven>

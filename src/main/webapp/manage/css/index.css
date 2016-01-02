@@ -1,0 +1,93 @@
+#roleInfoBox{border-bottom:1px solid #ddd;height:120px;
+width:900px;
+float:left;overflow: hidden;
+margin-top:20px;
+}
+#roleInfoBox a:hover{text-decoration: underline;}
+#roleB_l,#roleB_r{float:left;height:100px;padding:10px;}
+#roleB_l{width:100%}
+.roleBL_imgBox,.roleBL_infoBox{float:left;height:100%;overflow: hidden;}
+.roleBL_imgBox img{width:100px;}
+.roleBL_infoBox{padding-left:15px;width:700px}
+.roleBLIB_t{height:30px;width:100%;}
+.roleBLIB_t h1,.roleBLIB_t span{float:left;padding-right:10px;}
+.roleBLIB_t span,.roleBLIB_t span a{line-height: 30px;font-size:14px;color:#777;}
+.roleBLIB_t span a{color:#529dbd}
+.roleBLIB_t span a:hover{text-decoration: underline;}
+.shopName{font-size:18px;font-weight: bold;color:#666;}
+.roleBLIB_b{width:80%;float: left;margin-top:10px;}
+.roleBLIB_b ul li{display:block;float:left;height:30px;width:50%}
+.roleBLIB_b ul li span,.roleBLIB_b ul li span a{display:block;float:left;height:100%;line-height: 30px;font-size:14px;}
+.roleBLIB_b ul li span{padding-right:10px;color:#666;}
+.iocRZ{background:url(../img/renzheng.png) no-repeat;width: 20px !important;height:20px !important;margin-top:7px;padding-right:0px !important;}
+.iocRZ.tel{background-position: -0px -18px;}
+.iocRZ.password{background-position: -0px -294px;}
+.iocRZ.shiming{background-position: -0px -190px;}
+
+/***************************************************************************/
+#accountBox{width:900px;height:150px;}
+#accountBox .quyukuang{width:100%;height:170px}
+.accountInfo,.accountOper{float:left;height:100%;}
+.accountInfo{width:600px;}
+.accountOper{margin-left:10px;padding-left:10px;}
+.accountOper ul{margin-top:30px;}
+.accountOper ul li{display:block;float:left;height:40px;margin-right:5px;}
+.accountOper ul li a{display:block;float:left;width:100px;height:40px;background:#FF8800;line-height: 40px;text-align: center;color:#fff;font-size:14px;}
+.accountOper ul li a:hover{background:#EE7700  }
+/**************************************************************************/
+#orderBox{width:900px;height:150px;float:left;}
+.tabBox{width:890px;height:40px;border-bottom:1px solid #44b549;border-left:10px solid #44b549;}
+.tabBox h2{float:left;font-size:16px;color:#44b549;line-height: 40px;padding-left:8px;font-weight: bold;}
+
+#layout_bodyI_r_center{width:910px;margin-left:40px;}
+
+
+
+
+.shopStatus{background:url(../img/status.png) no-repeat;display:block;float:left;width:60px;height:23px;position: relative;left:10px;top:5px;}
+.shopStatus.open{background-position: -0px -0px;}
+.shopStatus.close{background-position:-0px -29px;}
+.statusTip{padding-left:20px;}
+
+
+
+/**********************************************************/
+#openCloseBox{width:860px;height:60px;padding:20px;border:1px solid #ccc;background:#eee;margin-top:20px;}
+#openCloseBox h3{font-size:18px;color:#333;}
+#openCloseBox h3 a{font-size:18px;}
+#openCloseBox h3 a:hover{text-decoration: underline;}
+#openCloseBox p{line-height: 20px;font-size:14px;color:#666;margin-top:10px;margin-left:20px;}
+
+
+
+
+
+
+/*********************后台首页统计css开始************************/
+.countBox{height:auto;width:900px;border:1px solid #e7e7eb;float:left;margin-bottom:10px;}
+
+.countBox .left{width:100px;float:left;height:100%;padding:10px;}
+.countBox .left h2{font-size:18px;font-weight: bold;color:#666;line-height: 70px;text-align: center;}
+.countBox .right{width:740px;float:left;height:auto;padding:10px;
+border-left:1px solid #ddd;background:#f4f5f9;
+}
+.everyCountBox{min-width:180px;height:48px;border:1px solid #eee;padding:10px;background:#FFFFF0  ;float:left;margin-left:10px;margin-bottom:10px;}
+.everyCount_l,.everyCount_r{float:left;height:100%;line-height: 40px;color:#666;font-size:16px;}
+.countTxt{font-size:40px;font-weight: bold;color:#999;line-height: 35px;}
+/*********************后台首页统计css结束************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

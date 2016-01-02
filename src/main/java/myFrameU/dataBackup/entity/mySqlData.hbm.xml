@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="myFrameU.dataBackup.entity">
+	<class name="MySqlData" table="mySqlData" lazy="true">
+		<id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		
+				<property name="filePath" column="filePath" type="string"></property>
+				<property name="size" column="size" type="string"></property>
+				<property name="relDate" column="relDate" type="java.sql.Timestamp"></property>
+				<property name="current" column="current" type="int"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化的实体类 -->
+	<initMavenClass>myFrameU.weixin.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 初始化微信 -->
+	<weixinConfigs>
+	    <token>xuxianlin</token>
+	    <appId>wx247c7e42bcde403d</appId>
+	    <secret>cfffe0d79112d465d4c6277908ed9211</secret>
+	    <accessTokenUrl>https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=wx247c7e42bcde403d&amp;secret=cfffe0d79112d465d4c6277908ed9211</accessTokenUrl>
+	    <getOpenIdUrl>https://open.weixin.qq.com/connect/oauth2/authorize</getOpenIdUrl>
+	    <subscribeTxt>欢迎您进入爱尔特润滑之家！在这里您可以从通用石化厂家直接购买到厂家直供的LNG重卡专用机油，然后到厂家授权的LNG加气站提货，再也不用担心买到假油了！由于去掉了代理商经销商服务站等中间环节，您将享受到的是最优惠的出厂价，点击下面菜单了解详情！</subscribeTxt>
+	    <menuTxtUrl>E:/合伙人/application/hehuoren/src/myFrameU/weixin/base/util/menu.txt</menuTxtUrl>
+	    
+	    
+	    <pay-mch_id>1247893201</pay-mch_id>
+	    <pay-spbill_create_ip>58.58.75.67</pay-spbill_create_ip>
+	    <pay-notify_url>http://weixin.024lm.com/024lm/weixin/pay/wxPayCallback</pay-notify_url>
+	    <appKey>tongyongshihuaeffort826113607812</appKey>
+	    
+	    
+	    
+	    
+	    <adminWxid_2wmUrl>https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx247c7e42bcde403d&amp;redirect_uri=http://weixin.024lm.com/024lm/adminWxId&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=1#wechat_redirect</adminWxid_2wmUrl>
+	    
+	    
+	    
+	</weixinConfigs>
+	
+	<!-- 微信模板信息Id对应map -->
+	<templateMsgId_myAndWxs>
+	    <templateMsgId_myAndWx myTemplateId="RECHARGE_SUCCESS" wxTemplateId="2uBR_vAHoy-9qqDDleUiSRP6QNZVmQ2cYPBgV_-8bbg" txt="发送给user的，会员充值成功"></templateMsgId_myAndWx>
+	    <templateMsgId_myAndWx myTemplateId="Order_Add_SUC" wxTemplateId="n1i7Raf6NKLBSfrIdpOq-BSy8mv0JWDUtS6m2ila6OI" txt="发送给user的，下单成功"></templateMsgId_myAndWx>
+	    <templateMsgId_myAndWx myTemplateId="Order_Payed_SUC" wxTemplateId="EZoB9POCP_3OY9yMeTykMJstvrjSr_ShO5idR-ESR4Q" txt="发送给user的，订单付款成功"></templateMsgId_myAndWx>
+	    <templateMsgId_myAndWx myTemplateId="Order_Payed_SUC_QH" wxTemplateId="DCZXAD3LAO7La6xRmrtP__EnKucrUN90mJPfNcK5C5c" txt="发送给user的，订单付款成功提醒去哪取货"></templateMsgId_myAndWx>
+	    
+	    <templateMsgId_myAndWx myTemplateId="APPLY" wxTemplateId="AnNn5dlZunCCbTrhOiLr3sDORbrH-oGVLt_Yx1vm4-w" txt="发送给user的，审核结束将审核结果通知给用户"></templateMsgId_myAndWx>
+	    <templateMsgId_myAndWx myTemplateId="TOTuijianren_icome_order" wxTemplateId="m7sTjpKq1So-0bjUiU5LK92OokH9s71pM35oltqjtBY" txt="发送给推荐人，当有粉丝购买了订单付款成功了"></templateMsgId_myAndWx>
+	    <templateMsgId_myAndWx myTemplateId="HHR_SYQOVER_OK" wxTemplateId="AnNn5dlZunCCbTrhOiLr3sDORbrH-oGVLt_Yx1vm4-w" txt="试用期过了，成为正式的合伙人了"></templateMsgId_myAndWx>
+	    <templateMsgId_myAndWx myTemplateId="ProductCOUNT" wxTemplateId="5gkPF6flNHoUxDAyeadqnW8Lpg4kD_1xJqQe2iFwO5c" txt="库存"></templateMsgId_myAndWx>
+	    
+	    <templateMsgId_myAndWx myTemplateId="Order_Payed_SUC_TOADMIN" wxTemplateId="n1i7Raf6NKLBSfrIdpOq-BSy8mv0JWDUtS6m2ila6OI" txt="用户下单并且支付成功了，给admin一封信"></templateMsgId_myAndWx>
+	    <templateMsgId_myAndWx myTemplateId="RECHARGE_SUCCESS_TOADMIN" wxTemplateId="BZcLvgP0w5ssSPwpkznL4vDKO2kt2lO2z_Q3mKDpAQ0" txt="管理员接收来款通知"></templateMsgId_myAndWx>
+	</templateMsgId_myAndWxs>
+</initMaven>

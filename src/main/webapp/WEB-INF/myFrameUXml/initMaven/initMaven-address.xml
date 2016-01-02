@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.address.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 哪些类的哪些方法在执行之前，先需要拿出缓存里的address，然后放到request里去 -->
+	<needQueryAddresses>
+	    <needQueryAddress class="myFrameU.user.controller.MyAddressController" method="findDefault,findAll,selectDefault,findMyAdd2Mod,removeMyAdd,toAdd,addMyAddress"></needQueryAddress>
+	    <needQueryAddress class="myFrameU.user.controller.ShoucangController" method="findscs"></needQueryAddress>
+	    <needQueryAddress class="yishupaipai.order.controller.OrderController" method="toSpendingOrder"></needQueryAddress>
+	    
+	</needQueryAddresses>
+</initMaven>
+

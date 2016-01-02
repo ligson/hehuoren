@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化的实体类 -->
+	<initMavenClass>myFrameU.dataBackup.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 初始化数据库使用 -->
+	<mysqlpath>E:/合伙人/application/hehuoren/WebContent/data/mysql/bin/</mysqlpath>
+	<sqlPath>E:/合伙人/application/hehuoren/WebContent/data/mysql/</sqlPath>
+	<address>localhost</address>
+	<databaseName>hehuoren</databaseName>
+	<username>root</username>
+	<password>ever061209</password>
+</initMaven>

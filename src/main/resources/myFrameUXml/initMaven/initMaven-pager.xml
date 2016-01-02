@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.pager.init.InitMavenImpl</initMavenClass>
+	<pageSize>30</pageSize>
+	
+	<staticHtmlEnd>.htm</staticHtmlEnd>
+	<staticPager>-pager</staticPager>
+</initMaven>

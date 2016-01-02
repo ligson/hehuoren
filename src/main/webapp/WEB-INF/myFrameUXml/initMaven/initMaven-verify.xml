@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化的实体类 -->
+	<initMavenClass>myFrameU.verify.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 初始化sql简单验证 valuesDelimiter是指values的分隔符,默认为,-->
+	<sql-verifys valuesDelimiter=",">
+	    <sql-verify name="shopUser_email" sql="select count(id) from shopUser where name=?"></sql-verify>
+	</sql-verifys>
+	
+</initMaven>

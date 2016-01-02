@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化的实体类 -->
+	<initMavenClass>myFrameU.adv.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 运行第一次插入page -->
+	<advertingPages insert="false">
+	    <advertingPage nameKey="webIndex">网站首页</advertingPage>
+	    <advertingPage nameKey="shopList">店铺集合页面</advertingPage>
+	    <advertingPage nameKey="specialList">专场集合页面</advertingPage>
+	</advertingPages>
+	
+	<!-- 最简单的广告位 -->
+	<!-- 暂时不考虑address -->
+	<advertisings  insert="false">
+	    <advertising markedNum="advertingMarkedNum_webindex_2-wrap"  info="(WRAP)网站首页首屏焦点广告位" width="1080" height="600" advType="FOUCS" picNumber="5" status="ING" advertingPageNameKey="webIndex"  width100="0"></advertising>
+	</advertisings>
+	
+	
+	
+	
+	<advertisements  insert="false">
+	    	<advertisement advertisingMarkedNum="advertingMarkedNum_webindex_2-wrap" picUrl="img/adv/advertingMarkedNum_webindex_2-1-wrap.jpg" picTitle="" picA="http://www.yicangjia.com/" status="ING" indexNum="1"></advertisement>
+	    <advertisement advertisingMarkedNum="advertingMarkedNum_webindex_2-wrap" picUrl="img/adv/advertingMarkedNum_webindex_2-2-wrap.jpg" picTitle="" picA="http://www.yicangjia.com/" status="ING" indexNum="2"></advertisement>
+	    <advertisement advertisingMarkedNum="advertingMarkedNum_webindex_2-wrap" picUrl="img/adv/advertingMarkedNum_webindex_2-3-wrap.jpg" picTitle="" picA="http://www.yicangjia.com/" status="ING" indexNum="3"></advertisement>
+	    <advertisement advertisingMarkedNum="advertingMarkedNum_webindex_2-wrap" picUrl="img/adv/advertingMarkedNum_webindex_2-4-wrap.jpg" picTitle="" picA="http://www.yicangjia.com/" status="ING" indexNum="4"></advertisement>
+	    <advertisement advertisingMarkedNum="advertingMarkedNum_webindex_2-wrap" picUrl="img/adv/advertingMarkedNum_webindex_2-5-wrap.jpg" picTitle="" picA="http://www.yicangjia.com/" status="ING" indexNum="5"></advertisement>
+	</advertisements>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</initMaven>

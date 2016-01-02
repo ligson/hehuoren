@@ -1,0 +1,417 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript" src="../internal.js"></script>
+    <link rel="stylesheet" href="image.css" type="text/css" />
+    <script type="text/javascript" src="http://www.taoz360.com/js/jquery-1.7.min.js"></script>
+    <style type="text/css">
+    .imageList{width:auto !important;}
+    .imgManager_left{width:100px;float:left;background-color:#f8f8f8;height:325px;border-right:1px solid #ccc;}
+    .imgManager_right{float:right;height:300px;width:500px;overflow:hidden;overflow-y:auto;}
+    
+    .imgManager_right_top{width:100%;height:295px;overflow: auto;}
+    .imgManager_right_bot{width:100%;height:25px;border-top:1px solid #ccc;}
+    .imgManager_right_bot_right{height:100%;width:100px;float:right;margin-right:20px;padding-top:5px;}
+    .imgManager_right_bot_right a{color:#333;text-decoration: none;padding:5px;}
+    .imgManager_right_bot_right a:hover{color: #000;text-decoration: underline;}
+    .imgManager_left ul{width:100px;height:auto;margin-top:10px;}
+    .imgManager_left ul li{display:block;width:100px;height:25px;border-bottom:1px solid #eee;}
+    .imgManager_left ul li a{display:block;float:left;width:80px;height:25px;line-height: 24px;padding:0px 10px 0px 10px;color:#333;text-decoration: none;}
+   	.imgManager_left ul li a:hover,.imgManager_left ul li a.cur{background-color:#f40;color:#fff !important;}
+   
+   
+   
+   
+   
+   
+   
+   .fl{float:left !important;}
+.fr{float:right !important;}
+   
+   
+   .everyImg{width:100px;height:120px;overflow: hidden;float:left;margin-left:15px;border:1px solid #eee;margin-bottom:5px;}
+.everyImg_cur{border:1px solid #ccc;}
+.everyImg_i{width:100px;height:100px;display: table-cell;vertical-align: middle;text-align:center;cursor: pointer;}
+.everyImg_t,.everyImg_n{width:100px;height:20px;}
+.everyImg_n{text-align: center;cursor: text;}
+.everyImg_t{width:90px;height:10px;padding:5px;}
+.everyImg_t span{display:block;float:left;}
+
+
+
+
+
+
+/*分页*/
+.page_style {
+    color: #f40;
+    float: right;
+    height: 30px;
+    line-height: 40px;
+    margin-right: 21px;
+    margin-top: 10px;
+    text-align: right;
+    margin-right:30px;
+    margin-bottom:20px;
+    width:90%
+}
+.page_style ul li{float:left;}
+.page_style a {
+	display: block;font-family: Arial,SimSun;
+font-size: 14px;
+line-height: 24px;
+position: relative;
+z-index: 1;background-image: -webkit-linear-gradient(top,#fff,#f0f0f0);
+color: #666;
+cursor: pointer;float:right;border: 1px solid #c1c1c1;border-radius: 2px;padding:5px;margin-right:5px;text-decoration: none;}
+.page_style a:hover{
+	text-decoration: underline;
+	color:#333;
+	border:1px solid #908f8f;text-decoration: none !important;
+}
+.cur_pager{border:1px solid #f40 !important;}
+.no_pager{cursor: default !important;}
+.no_pager:hover{color:#666 !important;border: 1px solid #c1c1c1 !important;}
+
+
+
+#pagerTable{clear:both;}
+
+
+
+
+
+
+
+
+
+
+    </style>
+<script type="text/javascript">
+
+function switchImage(curA){
+	var url=curA.getAttribute("contentUrl");
+	var left=document.getElementById("imgManager_2Left");
+	var allAs=left.getElementsByTagName("a");
+	var length=allAs.length;
+	for(var i=0;i<length;i++){
+		allAs[i].setAttribute("class","");
+	}
+	curA.setAttribute("class","cur");
+	ajax.request(url, {
+	    timeout:100000,
+	    action:"post",
+	    onsuccess:function (xhr) {
+	    	document.getElementById("imgManager_2Right").innerHTML=xhr.responseText;
+	    	dealImage();
+			tab();
+			$("#numPagerSapn").hide();
+	    },
+	    onerror:function () {
+	    }
+	});
+}
+function dealImage(){
+	var images=document.getElementById("imgManager_2Right").getElementsByTagName("img");
+	var length=images.length;
+	for(var k=0;k<length;k++){
+		var img=images[k];
+		var ci=img.getAttribute("src");
+        img.onclick = function () {
+            changeSelected(this);
+        };
+        scale(img, 100, 90, 90);
+        img.setAttribute("_src", editor.options.imageManagerPath + ci.replace(/\s+|\s+/ig, ""));
+	}
+}
+function tab(){
+	var contentDivId="imgManager_2Right";
+
+	var numPager=$("#pagerTable").attr("numPager");
+	
+
+	
+	$("#pager").delegate("li a","click",function(){
+		var curA=$(this);
+
+		var curAClass=curA.attr("class");
+		if(curAClass=="no_pager" || curAClass=="cur_pager"){
+		}else{
+			var curAUrl=curA.attr("rel");
+			$.ajax( {
+				type : "POST",
+				url : curAUrl,
+				success : function(msg) {
+					$("#"+contentDivId).html(msg);
+					$("#"+contentDivId).find("img").each(function(){
+						var curImg=$(this);
+						var curI=curImg[0];
+						curImg.click(function(){
+							 changeSelected(curI);
+						});
+					});
+				}
+			})
+		}
+	});
+}
+
+
+function changeSelected(o) {
+    if (o.getAttribute("selected")) {
+        o.removeAttribute("selected");
+        o.style.cssText = "filter:alpha(Opacity=100);-moz-opacity:1;opacity: 1;border: 2px solid #fff";
+    } else {
+        o.setAttribute("selected", "true");
+        o.style.cssText = "filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5;border:2px solid blue;";
+    }
+}
+
+function scale(img, max, oWidth, oHeight) {
+    var width = 0, height = 0, percent, ow = img.width || oWidth, oh = img.height || oHeight;
+    if (ow > max || oh > max) {
+        if (ow >= oh) {
+            if (width = ow - max) {
+                percent = (width / ow).toFixed(2);
+                img.height = oh - oh * percent;
+                img.width = max;
+            }
+        } else {
+            if (height = oh - max) {
+                percent = (height / oh).toFixed(2);
+                img.width = ow - ow * percent;
+                img.height = max;
+            }
+        }
+    }
+}
+
+
+</script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="imageTab">
+            <div id="tabHeads" class="tabhead">
+                <span tabSrc="imgManager" style="background-color:#f8f8f8;width:90px;display:none;"><var id="lang_tab_imgManager"></var></span>
+                <span tabSrc="local"  class="focus"><var id="lang_tab_local"></var></span>
+                
+                <!-- 
+                <span tabSrc="remote" ><var id="lang_tab_remote"></var></span>
+                <span tabSrc="imgManager"><var id="lang_tab_imgManager"></var></span>
+                <span tabSrc="imgSearch"><var id="lang_tab_imgSearch"></var></span>
+                 -->
+                 
+            </div>
+            <div id="tabBodys" class="tabbody">
+                <div id="remote" class="panel">
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="label"><label for="url"><var id="lang_input_url"></var></label></td>
+                            <td><input id="url" type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="width"><var id="lang_input_width"></var></label></td>
+                            <td><input type="text" id="width"/> px</td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="height"><var id="lang_input_height"></var></label></td>
+                            <td><input type="text" id="height"/> px</td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="border"><var id="lang_input_border"></var></label></td>
+                            <td><input type="text" id="border"/> px</td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="vhSpace"><var id="lang_input_vhspace"></var></label></td>
+                            <td><input type="text" id="vhSpace"/> px</td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="title"><var id="lang_input_title"></var></label></td>
+                            <td><input type="text" id="title"/></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><var id="lang_input_remoteAlign"></var></td>
+                            <td id="remoteFloat"></td>
+                        </tr>
+                    </table>
+
+                    <div id="preview"></div>
+                    <div class="lock"><input id="lock" type="checkbox" checked="checked"></div>
+                </div>
+                <div id="local" class="panel">
+                    <div id="flashContainer"></div>
+                    <div><div id="upload" style="display: none" ></div><div id="duiqi"></div><div id="localFloat"></div></div>
+
+                    <div class="saveDir"  style="display: none">
+                        <var id="lang_savePath" ></var>：<select id="savePath">
+                            <option value="1">upload</option>
+                            <option value="2">upload1</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="imgManager" class="panel">
+                			<div id="imageList" style="margin-top:0px;height:330px;">
+                				<!-- <var id="lang_imgLoading"></var> -->
+                				<div class="imgManager_right">
+			                		<div class="imgManager_right_top">
+			                					
+			                		</div>
+			                		<div class="imgManager_right_bot">
+			                			<div class="imgManager_right_bot_right">
+			                				<a href="#" id="imgM_prev">上一页</a>
+			                				<a href="#" id="imgM_next">下一页</a>
+			                			</div>
+			                		</div>
+			                	</div>
+			                  	<div class="imgManager_left">
+			                		<ul>
+			                			<li><a href="#" class="cur">常用</a></li>
+			                			<li><a href="#" >课程宝贝主图</a></li>
+			                			<li><a href="#">宝贝简介图</a></li>
+			                			<li><a href="#">资讯图</a></li>
+			                			<li><a href="#" >相册图</a></li>
+			                			<li><a href="#" >资质图</a></li>
+			                		</ul>
+			                	</div>
+                			</div>
+                </div>
+                <div id="imgSearch" class="panel">
+                    <table style="margin-top: 5px;">
+                        <tr>
+                            <td width="200"><input id="imgSearchTxt" type="text" /></td>
+                            <td width="65">
+                                <select id="imgType">
+                                    <!--具体内容值将由国际化组件动态填充-->
+                                    <option value="&s=4&z=0"></option>
+                                    <option value="&s=1&z=19"></option>
+                                    <option value="&s=2&z=0"></option>
+                                    <option value="&s=3&z=0"></option>
+                                </select>
+                            </td>
+                            <td width="80"><input id="imgSearchBtn" type="button"  /></td>
+                            <td width="80"><input id="imgSearchReset" type="button" /></td>
+                        </tr>
+                    </table>
+                    <div id="searchList"></div>
+                </div>
+                <iframe id="maskIframe" src="about:blank" scrolling="no" frameborder="no"></iframe>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../tangram.js"></script>
+    <script type="text/javascript" src="image.js"></script>
+
+    <script type="text/javascript">
+        //全局变量
+        var imageUrls = [],          //用于保存从服务器返回的图片信息数组
+            selectedImageCount = 0;  //当前已选择的但未上传的图片数量
+
+        editor.setOpt({
+            imageFieldName:"upfile",
+            compressSide:0,
+            maxImageSideLength:900
+        });
+        utils.domReady(function(){
+            var flashOptions = {
+                container:"flashContainer",                                                    //flash容器id
+                url:editor.options.imageUrl,                                           // 上传处理页面的url地址
+                ext:'{"param1":"value1", "param2":"value2"}',                                 //可向服务器提交的自定义参数列表
+                fileType:'{"description":"'+lang.fileType+'", "extension":"*.gif;*.jpeg;*.png;*.jpg"}',     //上传文件格式限制
+                flashUrl:'imageUploader.swf',                                                  //上传用的flash组件地址
+                width:608,          //flash的宽度
+                height:272,         //flash的高度
+                gridWidth:121,     // 每一个预览图片所占的宽度
+                gridHeight:120,    // 每一个预览图片所占的高度
+                picWidth:100,      // 单张预览图片的宽度
+                picHeight:100,     // 单张预览图片的高度
+                uploadDataFieldName:editor.options.imageFieldName,    // POST请求中图片数据的key
+                picDescFieldName:'pictitle',      // POST请求中图片描述的key
+                maxSize:4,                         // 文件的最大体积,单位M
+                compressSize:2,                   // 上传前如果图片体积超过该值，会先压缩,单位M
+                maxNum:32,                         // 单次最大可上传多少个文件
+                compressSide:editor.options.compressSide,                 //等比压缩的基准，0为按照最长边，1为按照宽度，2为按照高度
+                compressLength:editor.options.maxImageSideLength        //能接受的最大边长，超过该值Flash会自动等比压缩
+            };
+            //回调函数集合，支持传递函数名的字符串、函数句柄以及函数本身三种类型
+            var callbacks = {
+                // 选择文件的回调
+                selectFileCallback: function(selectFiles){
+                    utils.each(selectFiles,function(file){
+                        var tmp = {};
+                        tmp.id = file.index;
+                        tmp.data = {};
+                        postConfig.push(tmp);
+                    });
+                    selectedImageCount += selectFiles.length;
+                    if(selectedImageCount) baidu.g("upload").style.display = "";
+                    dialog.buttons[0].setDisabled(true); //初始化时置灰确定按钮
+                },
+                // 删除文件的回调
+                deleteFileCallback: function(delFiles){
+                    for(var i = 0,len = delFiles.length;i<len;i++){
+                        var index = delFiles[i].index;
+                        postConfig.splice(index,1);
+                    }
+                    selectedImageCount -= delFiles.length;
+                    if (!selectedImageCount) {
+                        baidu.g("upload").style.display = "none";
+                        dialog.buttons[0].setDisabled(false);         //没有选择图片时重新点亮按钮
+                    }
+                },
+
+                // 单个文件上传完成的回调
+                uploadCompleteCallback: function(data){
+                    try{
+                        var info = eval("(" + data.info + ")");
+                        info && imageUrls.push(info);
+                        selectedImageCount--;
+                    }catch(e){}
+
+                },
+                // 单个文件上传失败的回调,
+                uploadErrorCallback: function (data){
+                    if(!data.info){
+                        alert(lang.netError);
+                    }
+                    //console && console.log(data);
+                },
+                // 全部上传完成时的回调
+                allCompleteCallback: function(){
+                    dialog.buttons[0].setDisabled(false);    //上传完毕后点亮按钮
+                },
+                // 文件超出限制的最大体积时的回调
+                //exceedFileCallback: 'exceedFileCallback',
+                // 开始上传某个文件时的回调
+                startUploadCallback: function(){
+                    var config = postConfig.shift();
+                    //也可以在这里更改
+                    //if(config.id==2){ //设置第三张图片的对应参数
+                    //     config.data={"myParam":"value"}
+                    // }
+                    flashObj.addCustomizedParams(config.id,config.data);
+                }
+            };
+            imageUploader.init(flashOptions,callbacks);
+            $G("upload").onclick = function () {
+                /**
+                 * 接口imageUploader.setPostParams()可以在提交时设置本次上传提交的参数（包括所有图片）
+                 * 参数为json对象{"key1":"value1","key2":"value2"}，其中key即为向后台post提交的name，value即为值。
+                 * 其中有一个特殊的保留key值为action，若设置，可以更改本次提交的处理地址
+                 */
+                var postParams = {
+                    "dir":baidu.g("savePath").value
+                };
+                imageUploader.setPostParams(postParams);
+                flashObj.upload();
+                this.style.display = "none";
+                $G("savePath").parentNode.style.display = "none";
+            };
+
+        });
+    </script>
+</body>
+</html>

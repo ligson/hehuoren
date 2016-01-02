@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化的实体类 -->
+	<initMavenClass>myFrameU.app.init.InitMavenImpl</initMavenClass>
+	
+	
+	<!-- 初始化app应用的key -->
+	<appKey>fdsafdasdfssd</appKey>
+</initMaven>

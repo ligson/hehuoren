@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.spring.aop.init.InitMavenImpl</initMavenClass>
+	
+	<!--  -->
+	<login status="open">
+	    <login-role  prefix="/admin/" roleClass="myFrame.admin.entity.Admin" saveRoleSessionKey="myAdmin" ifNotLoginPath="toAdminLogin"></login-role>
+	    <login-role prefix="/shop/"  roleClass="myFrame.shop.entity.Shop" saveRoleSessionKey="myShop" ifNotLoginPath="toShopLogin"></login-role>
+	    <login-role  prefix="/user/" roleClass="myFrame.user.entity.User" saveRoleSessionKey="myUser"  ifNotLoginPath="toUserLogin"></login-role>
+	    
+	     <login-role prefix="/wrap/shop/"  roleClass="myFrame.shop.entity.Shop" saveRoleSessionKey="myShop" ifNotLoginPath="wrap/toShopLogin"></login-role>
+	    <login-role  prefix="/wrap/user/" roleClass="myFrame.user.entity.User" saveRoleSessionKey="myUser"  ifNotLoginPath="wrap/toUserLogin"></login-role>
+	    
+	</login>
+	
+	
+	<!-- 定义穿插在webAop中的一些零零散模块的AOP,当然每个模块AOP必须实现AOPI接口-->
+	<!-- method暂时只支持aopAfter和aopBefore,如果两者都需要，则中间用，隔开 -->
+	<!-- interceptPrefix拦截的前缀，多个拦截前缀用,隔开 -->
+	<mavenAops>
+	    <mavenAop class="myFrameU.ehcache.aop.CacheAOP" method="aopAfter" interceptPrefix=""></mavenAop>
+	    <mavenAop class="myFrameU.pager.aop.AgainPagerAOP" method="aopAfter"  interceptPrefix=""></mavenAop>
+	    <mavenAop class="myFrameU.app.aop.AppJsonResultAop" method="aopAfter"  interceptPrefix=""></mavenAop>
+	    <mavenAop class="myFrameU.adv.aop.AdverAOP" method="aopAfter"  interceptPrefix=""></mavenAop>
+	    
+	     <mavenAop class="myFrameU.address.aop.AddressAop" method="aopBefore"  interceptPrefix=""></mavenAop>
+	</mavenAops>
+	
+	
+	
+	
+	
+	
+</initMaven>

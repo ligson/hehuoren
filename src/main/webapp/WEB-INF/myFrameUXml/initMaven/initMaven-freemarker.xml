@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.freemarker.init.InitMavenImpl</initMavenClass>
+	
+	<ftlPackage>/myFrame/freemarker/ftl</ftlPackage>
+	<ftlToPagePath>E:/合伙人/application/hehuoren/WebContent/</ftlToPagePath>
+	
+</initMaven>

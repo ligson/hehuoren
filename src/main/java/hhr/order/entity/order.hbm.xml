@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="hhr.order.entity">
+	<class name="Order" table="order_order">
+        <id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="markedNum" column="markedNum" type="string"></property>
+		<property name="tuijianRenId" column="tuijianRenId" type="int"></property>	
+		<property name="tujianRenName" column="tujianRenName" type="string"></property>	
+		<property name="userId" column="userId" type="int"></property>	
+		<property name="userName" column="userName" type="string"></property>		
+		<property name="myAddressId" column="myAddressId" type="int"></property>	
+		
+		
+		
+		<property name="totalCount" column="totalCount" type="int"></property>
+		<property name="totalPrice" column="totalPrice" type="float"></property>
+		
+		
+		<property name="status" column="status" type="string"></property>
+		
+		<property name="createDate" column="createDate" type="java.sql.Timestamp"></property>	
+		<property name="payDate" column="payDate" type="java.sql.Timestamp"></property>	
+		<property name="pickDate" column="pickDate" type="java.sql.Timestamp"></property>	
+		
+		
+		<property name="toHehuorenPrice" column="toHehuorenPrice" type="float"></property>
+		<property name="toWebPrice" column="toWebPrice" type="float"></property>
+		<property name="remarks" column="remarks" type="string"></property>
+		
+		
+		<set name="oiSet" cascade="all" order-by="id" batch-size="5"  inverse="true" lazy="false">
+			<key column="order_id"></key>
+			<one-to-many class="hhr.order.entity.OrderItem"/>
+		</set>
+		
+		
+		<property name="shouhuoName" column="shouhuoName" type="string"></property>
+		<property name="shouhuoTelphone" column="shouhuoTelphone" type="string"></property>
+		
+		
+		<property name="outerMarkedNum1" column="outerMarkedNum1" type="string"></property>
+		<property name="outerMarkedNum" column="outerMarkedNum" type="string"></property>
+		
+		<property name="outerType" column="outerType" type="string"></property>
+		
+		<property name="orderPayType" column="orderPayType" type="string"></property>
+		
+		
+    </class>
+</hibernate-mapping>

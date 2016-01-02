@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化的实体类 -->
+	<initMavenClass>myFrameU.exportData.excel.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 初始化 要导出到excel的哪些类，哪些字段 -->
+	<!-- 这里只能实现单表的导出，因为用到反射，只能反射执行单个类的get方法来获取value -->
+	<!-- simpleClassName必须是唯一的 -->
+	<export-class-instructions>
+	    <exportClassIns 
+	        classNameChinese="用户信息" 
+	        simpleClassName="user" 
+	        className="myFrameU.user.entity.User" 
+	        fields="id,name,phone,nicheng,password,zhuceDate,userLevelId,tuijianRenNicheng,fensiCount" 
+	        fieldNames="id,名称,电话,昵称,密码,注册时间,用户级别,推荐人,粉丝数"></exportClassIns>
+	    
+	    
+	    
+	    
+	    <exportClassIns 
+	        classNameChinese="订单信息" 
+	        simpleClassName="order" 
+	        className="hhr.order.entity.Order" 
+	        fields="id,userName,status,totalCount,totalPrice,createDate,payDate" 
+	        fieldNames="id,买家名,状态(CLOSE=关闭 WAITPAY=等待付款  PAYED=已付款 PICKUPED=已取货),数量,金额,下单日期,付款时间"></exportClassIns>
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	</export-class-instructions>
+</initMaven>

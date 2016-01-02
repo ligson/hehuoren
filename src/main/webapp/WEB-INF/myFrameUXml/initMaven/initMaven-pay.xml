@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.pay.alipay.init.InitMavenImpl</initMavenClass>
+	
+	<!-- 初始化支付宝的接口 -->
+	<alipay>
+	    <alipay-partner>2088411404185309</alipay-partner>
+	    <alipay-key>4s2zdaxecoe6zvocy9vb9m314q3xa8te</alipay-key>
+	    <alipay-logPath>E:/艺术拍拍/application/yishupaipai/WebContent/log/</alipay-logPath>
+	</alipay>
+	
+</initMaven>

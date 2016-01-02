@@ -1,0 +1,323 @@
+﻿/*****************myAlert and mui.poppicker.css*******************************************/
+.mui-poppicker {
+	position: fixed;
+	left: 0px;
+	width: 100%;
+	z-index: 999;
+	background-color: #eee;
+	border-top: solid 1px #ccc;
+	box-shadow: 0px -5px 7px 0px rgba(0, 0, 0, 0.1);
+	-webkit-transition: .3s;
+	bottom: 0px;
+	-webkit-transform: translateY(300px);
+}
+.mui-poppicker.mui-active {
+	-webkit-transform: translateY(0px);
+}
+.mui-android-5-1 .mui-poppicker {
+	bottom: -300px;
+	-webkit-transition-property: bottom;
+	-webkit-transform: none;
+}
+.mui-android-5-1 .mui-poppicker.mui-active {
+	bottom: 0px;
+	-webkit-transition-property: bottom;
+	-webkit-transform: none;
+}
+.mui-poppicker-header {
+	padding: 6px;
+	font-size: 14px;
+	color: #888;
+}
+.mui-poppicker-header .mui-btn {
+	font-size: 12px;
+	padding: 5px 10px;
+}
+.mui-poppicker-btn-cancel {
+	float: left;
+}
+.mui-poppicker-btn-ok {
+	float: right;
+}
+.mui-poppicker-clear {
+	clear: both;
+	height: 0px;
+	line-height: 0px;
+	font-size: 0px;
+	overflow: hidden;
+}
+.mui-poppicker-body {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	border-top: solid 1px #ddd;
+}
+.mui-poppicker-body .mui-listpicker {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	border: none;
+	float: left;
+}
+
+
+.mySelectBox select{width:auto !important;float:left !important;border:1px solid #ddd !important;
+padding:5px 10px !important;margin-bottom:1px !important;
+}
+/********************************************************************/
+
+body{background-color: #fff;}
+.mui-content{background:none;float:left;}
+.tabContentBox{padding-top:10px;float: left;
+  width: 100%;}
+.mui-control-content{float:left;width:100%}
+
+
+.mui-segmented-control{border:1px solid #ccc;}
+.mui-segmented-control .mui-control-item.mui-active {
+  color: #000;
+  background-color: #efefef;
+}
+.mui-segmented-control .mui-control-item{  border-color: #ccc; 
+  border-left: 1px solid #ccc;}
+.mui-segmented-control .mui-control-item{color:#333;}
+
+
+.mui-content-padded a.myHeadA {
+  margin: 3px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-clip: padding-box;
+}
+.mui-content-padded a.myHeadA .mui-icon {
+  margin-top: 6px;
+}
+.mui-content-padded a.bkred{background:#7f0019;border:1px solid #7f0019;}
+.mui-content-padded a.bkred .mui-icon{margin-top:10px;}
+.mui-content-padded a.bkred span.mui-icon{color:#fff;}
+
+
+
+
+
+
+#offCanvasWrapper{ overflow: visible; }
+#offCanvasContentScroll{background:#F8F8FF;overflow: visible; }
+
+
+
+
+
+
+
+a.mui-navigate-right{color:#fff ;  font-size: 15px;}
+
+
+.link-area {text-align: center;}
+.my-mui-poppicker{-webkit-transform: none !important;}
+.my-mui-poppicker .mui-poppicker-body{background:#fff;}
+.my-mui-poppicker .mui-poppicker-btn-cancel{float:right;}
+
+.mui-btn-primary{padding:10px;}
+.mui-poppicker-body div:first{overflow: hidden;margin:0 auto;}
+
+
+
+
+
+
+
+
+
+
+.mui-input-group:before{background:none;display:none;}
+.mui-input-group:after{background:none;display:none;}
+.mui-input-group .mui-input-row.noAfter:after{display:none;}
+
+/*******************************************************/
+#myHead{height:auto;margin:0px ;float:left;width:100%;}
+#myHead_l,#myHead_r,#myHead_c{float:left;}
+#myHead_r{float:right;width:10%;}
+#myHead_r .flex-container a{float:right;}
+#myHead_l{width:10%}
+#myHead_c{width:80%}
+#myHead_c h2{text-align: center;line-height:3.5em;font-size:1.5em;font-weight: 700;color:#666;}
+#myHead.absoult,#myHead.absoultNew{position: absolute;top:0px;z-index:11111;}
+#myHead.absoult #myHead_l,#myHead.absoult #myHead_c{visibility: hidden;}
+
+
+
+
+.width100Box{width:100%;float:left;}
+.widthNo100{
+max-width: 62.5rem;margin:0 auto;overflow: hidden;
+}
+.mysuojinDiv{width:98%;margin:1%;float:left;}
+.ui_simpleTitle{line-height: 22px;
+  font-size: 18px;
+  border-bottom: 1px solid #CCC;
+  font-weight: 700;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;}
+
+
+
+
+.fullScreen{width:100%;height:100%;background:#333;
+filter:alpha(opacity=50); /*IE滤镜，透明度50%*/
+-moz-opacity:0.5; /*Firefox私有，透明度50%*/
+opacity:0.5;/*其他，透明度50%*/
+position: absolute;
+top:0px;
+left:0px;
+z-index:11;
+}
+.simpleDiv{text-align: center;position: relative;top:50px;}
+/*********************下面点击更多ajax分页css开始**********************************/
+.moreBox{width:100%;float:left;height:30px;}
+.moreBox{display:block;float:left;width:100%;height:100%;text-align: center;line-height: 30px;
+background:#F0FFF0;
+}
+.moreBox:hover{background:#F0F8FF ;}
+/*********************下面点击更多ajax分页css结束**********************************/
+
+/*********************获取验证码css开始**********************************/
+.sendSMS{position: absolute;right:10px;width:auto !important;}
+/*********************获取验证码css开始**********************************/
+
+
+/*********************我自己的tabcss开始**********************************/
+.tabHeadBox{
+  font-size: 15px;
+  font-weight: 400;
+  position: relative;
+  display: table;
+  overflow: hidden;
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid #007aff;
+  border-radius: 3px;
+  background-color: transparent;
+  -webkit-touch-callout: none;
+  border: 1px solid #ccc;
+}
+
+.tabHeadBox a{
+  line-height: 38px;
+  display: table-cell;
+  overflow: hidden;
+  width: 1%;
+  -webkit-transition: background-color .1s linear;
+  transition: background-color .1s linear;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #333;
+  border-color: #ccc;
+  border-left: 1px solid #ccc;
+}
+.tabHeadBox a:first-child {
+  border-left-width: 0;
+}
+.tabHeadBox a.selected{
+  color: #000;
+  background-color: #efefef;
+}
+.tabContent{display:none;}
+.tabContent.selected{display:block;}
+/*********************我自己的tabcss结束**********************************/
+
+
+
+/**************************************倒计时*开始****************************************/
+.timeBox .timeDIV{font-size:12px;font-weight: bold;color:#999;padding-top:5px;float:left;margin-left:10px;}
+.timeBox .timeDIV.noMar{margin-left:0px;}
+.djsTimeBox{float:left;margin-left:0px;position: relative;top:0px;}
+.djsgroup{float:left;}
+.djsgroup span.num{color:#800019;font-family: Tahoma;}
+.djsTimeBox.small .djsgroup span.num{font-size: 16px;font-weight: 700;}
+.djsTimeBox.marginl10{margin-left:10px;position: relative;top:-5px;}
+
+.timeBox.pre .djsgroup span.num{color:#008060}
+/**************************************倒计时*结束****************************************/
+
+
+
+
+
+
+
+/*******************分页 css开始******************/
+#pageBoxOuter{clear:both;}
+#pageBox{width:100%;margin:0 auto;height:auto;padding-top:20px;padding-bottom:20px;}
+
+#pageBox .next, #pageBox .previous{
+  font-size: 14px;
+  padding: 8px 10px;
+  vertical-align: middle;
+  color: #333;
+  margin-right: -5px;
+  min-width: 20px;
+  display:block;float:left;
+  background-color: #f6f6f6;
+  border: 1px solid #ccc;
+  width:49.9%;
+  text-align: center;
+}
+
+/*******************分页 css结束******************/
+
+/*******************区域框 css结束******************/
+.qykBox{width:99%;margin:0 auto;background:#fff;border:1px solid #ddd;position: relative;top:10px;margin-bottom:10px;
+overflow: hidden;
+}
+
+.qykHead{height:30px;border-bottom:1px solid #ddd;}
+.qykHead h3{border-left:3px solid #dd524d;font-size:14px;font-weight: bold;padding-left:5px;margin-top:5px;position: relative;left:-1px;}
+.qykBody{width:100%;float:left;}
+.qykBody .qykBodyI{width:95%;margin:0 auto;padding-top:10px;padding-bottom:10px;}
+.qykFoot{width:100%;height:auto;background:#F8F8FF ;border-top:1px solid #ddd;float:left;}
+.qykFoot .qykFootI{width:95%;margin:0 auto;padding-top:10px;padding-bottom:10px;}
+.sinputBox li{display:block;float:left;padding:5px;width:95%;text-align: center;}
+.sinputBox li span{float:left;line-height: 30px;text-align: center;}
+.sinputBox li span.k{width:20%;}
+.sinputBox li span.v{width:79%;float:right;}
+.sinputBox li span input.txtInput{height:30px;margin-bottom:0px;}
+.sinputBox li .button{background:#7f0019;border:1px solid #7f0019;color:#fff;width:100%}
+
+.qykBodyI table tr td{padding:5px;font-size:12px;}
+.qykBodyI table tr td a{color:#0097cd}
+
+.qykBody p{line-height: 22px;}
+/*******************区域框 css结束******************/
+
+/*******************table list css开始******************/
+.myList table{width:100%;}
+.myList table tr td{padding:5px;font-size:12px;padding-top:8px;padding-bottom:8px;}
+.myList table thead tr td{background:#eee;border-bottom:1px solid #ddd;}
+.myList table tr:nth-child(odd){}
+.myList table tr:nth-child(even){background:#F4F4F4;}
+
+
+
+
+/*******************table list css结束******************/
+
+.wrapTipBox{width:100%;background:#FFE4E1;}
+.wrapTipBox .wrapTipBoxI{width:95%;margin:0 auto;padding-top:10px;padding-bottom:10px;}
+.wrapTipBox p{line-height: 20px;color:#B22222;}
+
+
+
+
+
+
+
+
+

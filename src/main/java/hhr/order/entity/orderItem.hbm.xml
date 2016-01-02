@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="hhr.order.entity">
+	<class name="OrderItem" table="order_orderItem">
+        <id name="id" column="id">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="productId" column="productId" type="int"></property>	
+		<property name="ocount" column="ocount" type="int"></property>	
+		
+		<property name="price" column="price" type="float"></property>
+		<property name="tprice" column="tprice" type="float"></property>
+		<property name="pickupAddressId" column="pickupAddressId" type="int"></property>
+		
+		
+		<many-to-one name="order" class="hhr.order.entity.Order" column="order_id" cascade="none"></many-to-one>
+		<property name="toHehuorenPrice" column="toHehuorenPrice" type="float"></property>
+		<property name="toWebPrice" column="toWebPrice" type="float"></property>
+		
+		<property name="productPriceId" column="productPriceId" type="int"></property>
+		
+    </class>
+</hibernate-mapping>

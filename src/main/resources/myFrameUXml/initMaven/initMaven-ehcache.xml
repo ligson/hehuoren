@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initMaven>
+	<!-- 初始化ehcache的实体类 -->
+	<initMavenClass>myFrameU.ehcache.init.InitMavenImpl</initMavenClass>
+	
+	
+	
+	<!-- 系统初始化一些业务数据，放在cache中 -->
+	<initDataClasses>
+		<initDataClass>myFrameU.global.initData.LoadGlobal</initDataClass>
+		<initDataClass>myFrameU.expand.libraryProperty.initData.LoadLibraryProperty</initDataClass>
+		<initDataClass>myFrameU.expand.distribution.initData.LoadDistributeProperty</initDataClass>
+		<initDataClass>myFrameU.expand.use.test.initData.LoadExpandTestProduct</initDataClass>
+		<initDataClass>myFrameU.address.initData.LoadAddress</initDataClass>
+		<initDataClass>myFrameU.product.initData.LoadProductType</initDataClass>
+		<initDataClass>myFrameU.adv.initData.LoadAdvertingPage</initDataClass>
+		<initDataClass>myFrameU.adv.initData.LoadAdvering</initDataClass>
+		<initDataClass>myFrameU.adv.initData.LoadAdverment</initDataClass>
+		
+		<initDataClass>myFrame.quartz.initData.LoadHHRSyq</initDataClass>
+		<initDataClass>myFrame.quartz.initData.LoadOrderWait</initDataClass>
+		<initDataClass>myFrameU.news.initData.LoadNewsType</initDataClass>
+		<initDataClass>hhr.order.initData.LoadPickUpAddress</initDataClass>
+		
+	</initDataClasses>
+	<!-- 在某一个请求过来的时候，需要级联清除哪些缓存 -->
+	<!-- 级联清除缓存之后，有的缓存是需要重新建立起来的，如initData中的数据，如global -->
+	<initCleans>
+		<initClean class="myFrameU.global.controller.GlobalController" method="modify">
+			<clear cacheName="web" cacheKey="globalMap" againLoad="true" loadClass="myFrameU.global.initData.LoadGlobal"></clear>
+		</initClean>
+		
+		<!-- 属性库 -->
+		<initClean class="myFrameU.expand.libraryProperty.controller.SystemLibraryPropertyController" method="addSystemLibraryProperty,addPvs,modifyPropertyValue,modifyProperty">
+			<clear cacheName="web" cacheKey="libraryPropertyMap" againLoad="true" loadClass="myFrameU.expand.libraryProperty.initData.LoadLibraryProperty"></clear>
+		</initClean>
+		<!-- 属性分配 -->
+		<initClean class="myFrameU.expand.distribution.controller.DistributePropertyController" method="addDistributePropertyBatch,modifyDistributeProperty,modifyDistributePropertyValue">
+			<clear cacheName="web" cacheKey="distributePropertyMap" againLoad="true" loadClass="myFrameU.expand.distribution.initData.LoadDistributeProperty"></clear>
+		</initClean>
+		
+		
+		<!--productType -->
+		<initClean class="myFrameU.product.controller.ProductTypeController" method="add,modify,remove">
+			<clear cacheName="web" cacheKey="productTypeMap" againLoad="true" loadClass="myFrameU.product.initData.LoadProductType"></clear>
+		</initClean>
+		
+		
+		<!-- adv -->
+		<initClean class="myFrameU.adv.controller.AdvertisementController" method="close,modifyAdvertisement,modifyStatus">
+			<clear cacheName="web" cacheKey="advertisementMap" againLoad="true" loadClass="myFrameU.adv.initData.LoadAdverment"></clear>
+		</initClean>
+		
+		
+		
+		<!--pickupAddress -->
+		<initClean class="hhr.order.controller.PickUpAddressController" method="add,modify,remove">
+			<clear cacheName="web" cacheKey="pickUpAddressMap" againLoad="true" loadClass="hhr.order.initData.LoadPickUpAddress"></clear>
+		</initClean>
+		
+		<!--newsType -->
+		<initClean class="myFrameU.news.controller.NewsTypeController" method="add,modify,remove">
+			<clear cacheName="web" cacheKey="newsTypeMap" againLoad="true" loadClass="myFrameU.news.initData.LoadNewsType"></clear>
+		</initClean>
+		
+		
+	</initCleans>
+</initMaven>
+
