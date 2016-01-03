@@ -22,12 +22,12 @@ public class FatherController extends MultiActionController {
 	
 	
 	
-	@Autowired
+	//@Autowired
 	public AbstractBizI aBiz;
-	@Autowired
+	//@Autowired
 	public UICacheManager uICacheManager;
 
-	public AbstractBizI getaBiz() {
+	/*public AbstractBizI getaBiz() {
 		return aBiz;
 	}
 
@@ -41,7 +41,7 @@ public class FatherController extends MultiActionController {
 
 	public void setuICacheManager(UICacheManager uICacheManager) {
 		this.uICacheManager = uICacheManager;
-	}
+	}*/
 
 	/**
 	 */
@@ -93,21 +93,22 @@ public class FatherController extends MultiActionController {
 	}
 
 	public SDynaActionForm getSDynaActionForm(HttpServletRequest req) {
-		SDynaActionForm sDynaActionForm = (SDynaActionForm) uICacheManager
-				.getObjectCached("web", "sDynaActionForm");
+		/*SDynaActionForm sDynaActionForm = (SDynaActionForm) uICacheManager
+				.getObjectCached("web", "sDynaActionForm");*/
 		Enumeration e = (Enumeration) req.getParameterNames();
 		while (e.hasMoreElements()) {
 			String parName = (String) e.nextElement();
 			String value = req.getParameter(parName);
 			if(null!=parName && !parName.equals("")){
 				if(null!=value){
-					sDynaActionForm.getFormMap().put(parName, value);
+					//sDynaActionForm.getFormMap().put(parName, value);
 				}
 			}
 		}
-		req.setAttribute("formMap", sDynaActionForm.getFormMap());
+		//req.setAttribute("formMap", sDynaActionForm.getFormMap());
 		
-		return sDynaActionForm;
+		//return sDynaActionForm;
+		return null;
 	}
 	
 	protected void success(HttpServletRequest req){

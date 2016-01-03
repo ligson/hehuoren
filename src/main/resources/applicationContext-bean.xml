@@ -29,7 +29,7 @@
     <mvc:annotation-driven/>
 
 
-    <bean id="cacheManager"
+<!--    <bean id="cacheManager"
           class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
         <property name="configLocation">
             <value>classpath:myFrameUXml/ehcache.xml</value>
@@ -39,7 +39,7 @@
         <property name="manager">
             <ref local="cacheManager"/>
         </property>
-    </bean>
+    </bean>-->
 
 
     <!-- 普通dao -->

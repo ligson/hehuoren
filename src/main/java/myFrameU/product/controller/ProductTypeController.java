@@ -23,9 +23,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProductTypeController extends FatherController {
 	@RequestMapping(value={"/productType/finds","/admin/productType/finds"})
 	public String findShopLevels(HttpServletRequest req,HttpServletResponse res) throws Exception{
-		HashMap<String,ProductType> map=(HashMap<String, ProductType>) uICacheManager.getObjectCached("web", "productTypeMap");
-		List<ProductType> list = (List<ProductType>)MyCollectionUtils.map2list(map);
-		req.setAttribute(AppJsonResultUtil.app_+"productTypeList", list);
+		//HashMap<String,ProductType> map=(HashMap<String, ProductType>) uICacheManager.getObjectCached("web", "productTypeMap");
+		//List<ProductType> list = (List<ProductType>)MyCollectionUtils.map2list(map);
+		//req.setAttribute(AppJsonResultUtil.app_+"productTypeList", list);
 		return getForward("setUp/productTypeList", req);
 	}
 	
@@ -54,17 +54,17 @@ public class ProductTypeController extends FatherController {
 					pt.setParent(null);
 					pt.setWebTicheng(webTicheng);
 					pt.setAllName(name);
-					aBiz.addObject(pt);
+					//aBiz.addObject(pt);
 					pt.setTreeId("["+pt.getId()+"]");
 					pt.setRootTypeId(pt.getId());
 					
-					aBiz.modifyObject(pt);
+					//aBiz.modifyObject(pt);
 					
 				}else{
 					Integer fatherId=form.getInteger("fatherId");
 					if(null!=fatherId && fatherId.intValue()!=0){
-						ProductType pt1=(ProductType)aBiz.findObjectById("from ProductType as pt where pt.id=?", new Object[]{fatherId});
-						if(null!=pt1){
+					//	ProductType pt1=(ProductType)aBiz.findObjectById("from ProductType as pt where pt.id=?", new Object[]{fatherId});
+				/*		if(null!=pt1){
 							ProductType pt = new ProductType();
 							pt.setName(name);
 							pt.setIsROOT(1);
@@ -84,7 +84,7 @@ public class ProductTypeController extends FatherController {
 							
 							pt1.setIsLeaf(0);
 							aBiz.modifyObject(pt1);
-						}
+						}*/
 					}else{
 						throw new MyStrException("请选择父类");
 					}
@@ -101,15 +101,15 @@ public class ProductTypeController extends FatherController {
 		SDynaActionForm form = getSDynaActionForm(req);
 		Integer id = form.getInteger("id");
 		if(null!=id && id.intValue()!=0){
-			ProductType pt = (ProductType)aBiz.findObjectById("from ProductType as pt where pt.id=?", new Object[]{id});
-			if(null!=pt){
+			//ProductType pt = (ProductType)aBiz.findObjectById("from ProductType as pt where pt.id=?", new Object[]{id});
+			/*if(null!=pt){
 				int isROOT=pt.getIsROOT();
 				if(isROOT==0){
 					//根目录，删除广告
 					//aBiz.j_execute("delete from adv_advertisement where advertisingMarkedNum='advertingMarkedNum_productLanmu_1' and sonByValue='"+pt.getId()+"'", null);
 				}
 				aBiz.removeObject(pt);
-			}
+			}*/
 		}
 	}
 	@RequestMapping(value={"/admin/productType/findById"})
@@ -117,10 +117,10 @@ public class ProductTypeController extends FatherController {
 		SDynaActionForm form = getSDynaActionForm(req);
 		Integer id = form.getInteger("id");
 		if(null!=id && id.intValue()!=0){
-			ProductType pt = (ProductType)aBiz.findObjectById("from ProductType as pt where pt.id=?", new Object[]{id});
+			/*ProductType pt = (ProductType)aBiz.findObjectById("from ProductType as pt where pt.id=?", new Object[]{id});
 			if(null!=pt){
 				req.setAttribute(AppJsonResultUtil.app_+"productType", pt);
-			}
+			}*/
 		}
 		return getForward("setUp/productTypeMod", req);
 	}
@@ -132,8 +132,8 @@ public class ProductTypeController extends FatherController {
 		String name=form.getString("name");
 		Double webTicheng = form.getDouble("webTicheng");
 		if(null!=name && !name.equals("") && null!=webTicheng && null!=id && id.intValue()!=0){
-			ProductType pt = (ProductType)aBiz.findObjectById("from ProductType as pt where pt.id=?", new Object[]{id});
-			if(null!=pt){
+			//ProductType pt = (ProductType)aBiz.findObjectById("from ProductType as pt where pt.id=?", new Object[]{id});
+			/*if(null!=pt){
 				ProductType ptOld=(ProductType) aBiz.findObjectById("from ProductType as pt where pt.name=?", new Object[]{name});
 				if(null==ptOld){
 					String nameOld=pt.getName();
@@ -166,7 +166,7 @@ public class ProductTypeController extends FatherController {
 				}else{
 					throw new MyStrException("重名了！");
 				}
-			}
+			}*/
 		}
 	}
 	

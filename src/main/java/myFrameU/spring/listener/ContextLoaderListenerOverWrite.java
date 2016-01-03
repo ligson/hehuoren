@@ -42,7 +42,7 @@ public class ContextLoaderListenerOverWrite extends ContextLoaderListener  imple
     	String webAppRootKey = event.getServletContext().getRealPath("/");    
         System.setProperty("webapp.root" , webAppRootKey);   
         
-        super.contextInitialized(event);  
+//        super.contextInitialized(event);
         
         
         ApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());  
@@ -58,13 +58,13 @@ public class ContextLoaderListenerOverWrite extends ContextLoaderListener  imple
 
         //第三）初始化ehcache缓存里的数据。
         event.getServletContext().setAttribute("applicationContext",applicationContext); 
-        UICacheManager uICacheManager=(UICacheManager)applicationContext.getBean("uICacheManager");
-        AbstractBizI aBiz=(AbstractBizI)applicationContext.getBean("aBiz");
-        AccountBizI accountBiz=(AccountBizI)applicationContext.getBean("accountBiz");
+//        UICacheManager uICacheManager=(UICacheManager)applicationContext.getBean("uICacheManager");
+//        AbstractBizI aBiz=(AbstractBizI)applicationContext.getBean("aBiz");
+//        AccountBizI accountBiz=(AccountBizI)applicationContext.getBean("accountBiz");
        // OrderBizImpl orderBiz=(OrderBizImpl)applicationContext.getBean("orderBiz");
         try {
         	AbstractWebInit webInit = new AbstractWebInit();
-			webInit.initData(event.getServletContext(),uICacheManager,aBiz);
+			//webInit.initData(event.getServletContext(),uICacheManager,aBiz);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -78,13 +78,13 @@ public class ContextLoaderListenerOverWrite extends ContextLoaderListener  imple
     		if(null!=listenerMyClassStr && !listenerMyClassStr.equals("") && null!=listenerMethodStr && !listenerMethodStr.equals("")){
     			Class c = Class.forName(listenerMyClassStr);
     			Method m = c.getDeclaredMethod(listenerMethodStr,ServletContext.class,UICacheManager.class,AbstractBizI.class);
-    			m.invoke(c.newInstance(),event.getServletContext(),uICacheManager,aBiz); 
+    		//	m.invoke(c.newInstance(),event.getServletContext(),uICacheManager,aBiz);
     			
     		}
     		
     		//第五）生成空的form
     		SDynaActionForm sDynaActionForm=new SDynaActionForm();
-    		uICacheManager.putObjectCached("web", "sDynaActionForm", (Serializable) sDynaActionForm);
+    		//uICacheManager.putObjectCached("web", "sDynaActionForm", (Serializable) sDynaActionForm);
     		
     		/*//第六）生成最后加时的map
     		HashMap<String,AuctionItem> lastJIASHIMap=new HashMap<String,AuctionItem>();
@@ -92,18 +92,18 @@ public class ContextLoaderListenerOverWrite extends ContextLoaderListener  imple
     		*/
     		
     		
-    		StartQuartz.scheduler=(Scheduler)applicationContext.getBean("scheduler");
-    		StartQuartz.uICacheManager=uICacheManager;
+//    		StartQuartz.scheduler=(Scheduler)applicationContext.getBean("scheduler");
+    		//StartQuartz.uICacheManager=uICacheManager;
     		StartQuartz.QuartzJobExcuteClass=MyQuartzJobExcute.class;
-    		StartQuartz.accountBiz=accountBiz;
+    		//StartQuartz.accountBiz=accountBiz;
     		//StartQuartz.orderBiz=orderBiz;
     		StartQuartz.execute();
     		
     		
-    		MessageUtil.uICacheManager=uICacheManager;
+    		//MessageUtil.uICacheManager=uICacheManager;
     		
     		//每隔一个小时，获取微信的accessToken
-            RefreshAccessToken weixin_rat=new RefreshAccessToken(3600,uICacheManager);
+           // RefreshAccessToken weixin_rat=new RefreshAccessToken(3600,uICacheManager);
             
             
             ClassSe.canInit(null);
